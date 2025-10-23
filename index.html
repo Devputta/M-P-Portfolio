@@ -1,138 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mahadevu M P - Portfolio</title>
   <style>
+    /* === WIKIPEDIA-LIKE THEME === */
     body {
+      font-family: "Linux Libertine", "Georgia", serif;
       margin: 0;
-      font-family: "Georgia", "Times New Roman", serif;
-      background: #ffffff;
+      background-color: #ffffff;
       color: #202122;
-      line-height: 1.7;
+      line-height: 1.6;
     }
-
-    /* Header */
     header {
-      background: #f8f9fa;
+      background-color: #f8f9fa;
       border-bottom: 1px solid #a2a9b1;
-      padding: 10px 20px;
-      position: fixed;
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
       z-index: 1000;
     }
-
     header h1 {
-      font-size: 1.5rem;
+      font-size: 1.6em;
       margin: 0;
-      color: #202122;
+      font-weight: normal;
+    }
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.6em;
+      color: #0645ad;
     }
 
-    /* Sidebar (Table of Contents) */
-    #sidebar {
+    /* Sidebar */
+    nav {
+      width: 200px;
+      background-color: #f8f9fa;
+      border-right: 1px solid #a2a9b1;
+      padding: 15px;
       position: fixed;
       top: 60px;
-      left: 0;
-      width: 250px;
-      padding: 10px 15px;
-      border-right: 1px solid #a2a9b1;
-      background: #f8f9fa;
-      height: 100%;
+      bottom: 0;
       overflow-y: auto;
     }
-
-    #sidebar h3 {
-      font-size: 1rem;
-      border-bottom: 1px solid #a2a9b1;
-      padding-bottom: 4px;
-      margin-bottom: 10px;
-    }
-
-    #sidebar a {
+    nav a {
       display: block;
       color: #0645ad;
       text-decoration: none;
-      padding: 4px 0;
-      font-size: 0.95rem;
+      margin-bottom: 8px;
+      font-size: 0.95em;
     }
-
-    #sidebar a:hover {
+    nav a:hover {
       text-decoration: underline;
     }
 
-    #sidebar a.active {
-      font-weight: bold;
-      color: #000;
-    }
-
-    /* Main Content */
+    /* Main content layout */
     main {
-      margin-left: 270px;
-      padding: 90px 30px 40px;
-      max-width: 900px;
+      margin-left: 240px;
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+    }
+    .content {
+      flex: 3;
+    }
+    .infobox {
+      flex: 1;
+      border: 1px solid #a2a9b1;
+      background-color: #f8f9fa;
+      font-size: 0.9em;
+      padding: 10px;
+      max-width: 260px;
+      height: fit-content;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .infobox img {
+      width: 100%;
+      border: 1px solid #a2a9b1;
+      margin-bottom: 10px;
+    }
+    .infobox p {
+      margin: 6px 0;
     }
 
+    /* Typography */
     h2 {
       border-bottom: 1px solid #a2a9b1;
-      color: #202122;
-      padding-bottom: 4px;
-      margin-top: 40px;
+      color: #0645ad;
+      font-size: 1.4em;
+      margin-top: 1.2em;
+      padding-bottom: 3px;
     }
-
     h3 {
-      color: #202122;
-      margin-top: 25px;
+      color: #0645ad;
+      font-size: 1.1em;
+      margin-top: 1em;
     }
-
-    ul {
-      margin-left: 30px;
-    }
-
     a {
       color: #0645ad;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
 
-    /* Responsive Design */
+    ul {
+      margin-top: 0;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.95em;
+    }
+    th, td {
+      border: 1px solid #a2a9b1;
+      padding: 6px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f3f5;
+    }
+
+    /* === MOBILE RESPONSIVE === */
     @media (max-width: 900px) {
-      #sidebar {
-        position: relative;
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #a2a9b1;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+      .nav-toggle {
+        display: block;
       }
-
-      #sidebar a {
-        margin: 5px 10px;
+      nav {
+        display: none;
+        width: 220px;
+        top: 55px;
+        left: 0;
+        position: fixed;
+        height: calc(100% - 55px);
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        z-index: 999;
       }
-
       main {
         margin-left: 0;
-        padding: 20px;
+        flex-direction: column;
+        padding: 15px;
+      }
+      .infobox {
+        order: -1;
+        max-width: 100%;
+      }
+      table {
+        font-size: 0.85em;
       }
     }
   </style>
+  <script>
+    function toggleNav() {
+      const nav = document.querySelector("nav");
+      nav.style.display = nav.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </head>
-<body>
 
+<body>
   <header>
     <h1>Mahadevu M P</h1>
+    <span class="nav-toggle" onclick="toggleNav()">☰</span>
   </header>
 
-  <nav id="sidebar">
-    <h3>Contents</h3>
+  <nav>
     <a href="#about">About Me</a>
     <a href="#career">Career Objective</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Technical Skills</a>
     <a href="#projects">Projects</a>
     <a href="#publications">Publications</a>
     <a href="#achievements">Achievements</a>
@@ -141,94 +183,97 @@
   </nav>
 
   <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I am <strong>Mahadevu M P</strong>, a Software Engineer with a passion for building intelligent, scalable, and efficient solutions. With a background in Information Science and Engineering, I specialize in data analytics, machine learning, and automation-driven projects. I thrive on transforming complex problems into clean, innovative code and constantly explore new technologies to deliver impactful, real-world software solutions.</p>
-    </section>
+    <aside class="infobox">
+      <img src="images/profile.jpg" alt="Mahadevu M P" />
+      <p><strong>Full name:</strong> Mahadevu M P</p>
+      <p><strong>Field:</strong> Information Science & Engineering</p>
+      <p><strong>College:</strong> PES College of Engineering, Mandya</p>
+      <p><strong>Emails:</strong><br>
+        <a href="mailto:pmahadev592@gmail.com">pmahadev592@gmail.com</a><br>
+        <a href="mailto:mahadevump657@gmail.com">mahadevump657@gmail.com</a>
+      </p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/Devputta">Devputta</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">mahadevu-m-p</a></p>
+    </aside>
 
-    <section id="career">
-      <h2>Career Objective</h2>
-      <p>As a Software Engineer, I aim to contribute to an organization that encourages innovation, technical excellence, and continuous learning. I leverage my skills in software development, data analysis, and automation to build robust applications, optimize processes, and solve real-world challenges. My goal is to create solutions that are not only functional but also intelligent, efficient, and future-ready.</p>
-    </section>
+    <section class="content">
+      <h2 id="about">About Me</h2>
+      <p>I am Mahadevu M P, a passionate and detail-oriented Information Science and Engineering graduate from PES College of Engineering, Mandya, with a CGPA of 7.79/10. My academic and professional experiences have strengthened my expertise in data analytics, machine learning, and automation-based projects.</p>
 
-    <section id="projects">
-      <h2>Projects</h2>
+      <h2 id="career">Career Objective</h2>
+      <p>To obtain a challenging position in an organization that promotes innovation and continuous learning. I aim to leverage my technical and analytical skills in data analysis, IoT, and software development to contribute to impactful projects that enhance organizational efficiency.</p>
 
-      <h3>College Information Telegram Bot</h3>
+      <h2 id="education">Education</h2>
+      <table>
+        <tr><th>Qualification</th><th>Institution</th><th>CGPA / %</th><th>Year</th></tr>
+        <tr><td>B.E. in Information Science & Engineering</td><td>PES College of Engineering, Mandya</td><td>7.79 / 10</td><td>2025</td></tr>
+      </table>
+
+      <h2 id="skills">Technical Skills</h2>
       <ul>
-        <li>Developed a Telegram bot capable of delivering college-related information through automated chat interactions.</li>
-        <li>Designed backend logic in Python and integrated with Telegram Bot API.</li>
-        <li>Used NLP techniques for intelligent query understanding.</li>
+        <li><strong>Programming Languages:</strong> Python, Java, C</li>
+        <li><strong>Frameworks & Tools:</strong> Django, Flask, VS Code</li>
+        <li><strong>Databases:</strong> MySQL, SQLite</li>
+        <li><strong>Data Analytics & BI:</strong> Power BI, Power Query, DAX</li>
+        <li><strong>Machine Learning:</strong> TensorFlow, Scikit-learn, Pandas, NumPy</li>
+        <li><strong>Version Control:</strong> Git, GitHub</li>
+        <li><strong>Other Tools:</strong> API Integration, Automation APIs, Data Visualization</li>
       </ul>
 
-      <h3>Taxi Fare Prediction Using Machine Learning</h3>
+      <h2 id="projects">Projects</h2>
+
+      <h3>1. College Information Telegram Bot</h3>
       <ul>
-        <li>Designed a predictive model to estimate taxi fares based on distance and time data.</li>
-        <li>Implemented supervised regression models for prediction.</li>
-        <li>Visualized results using Matplotlib.</li>
+        <li>Developed a Telegram bot capable of delivering college-related information via automated chats.</li>
+        <li>Designed backend logic in Python and integrated Telegram Bot API.</li>
+        <li>Used NLP techniques for query understanding.</li>
+        <li>🔗 <a href="https://github.com/Devputta">GitHub Repository</a></li>
       </ul>
 
-      <h3>Enhancing Water Management in Buildings Through IoT-Based Monitoring</h3>
+      <h3>2. Taxi Fare Prediction Using Machine Learning</h3>
       <ul>
-        <li>Developed an IoT-based water monitoring system integrated with predictive analytics.</li>
-        <li>Used ESP32, LSTM, and DBSCAN for real-time monitoring and anomaly detection.</li>
+        <li>Built a predictive model to estimate taxi fares based on distance, duration, and time of day.</li>
+        <li>Implemented supervised regression models using Scikit-learn.</li>
       </ul>
-      <p><em>Published in TARCE Journal (2025)</em></p>
 
-      <h3>Supplier Invoice Process Automation</h3>
+      <h3>3. Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</h3>
       <ul>
-        <li>Automated supplier invoice handling using OCR (Optical Character Recognition).</li>
-        <li>Reduced manual data entry and improved accuracy in financial processing.</li>
+        <li>Developed IoT-based system integrated with predictive analytics.</li>
+        <li>Used ESP32, sensors, LSTM, and DBSCAN for data analysis.</li>
+        <li>📅 Published on: 6 April 2025</li>
+        <li>🧾 Journal: The Asian Review of Civil Engineering (TARCE)</li>
+        <li>🔗 DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261">10.70112/tarce-2025.14.1.4261</a></li>
       </ul>
-    </section>
 
-    <section id="publications">
-      <h2>Publications</h2>
+      <h3>4. Supplier Invoice Process Automation</h3>
+      <ul>
+        <li>Automated invoice processing using OCR and Python.</li>
+        <li>Used OpenCV for text extraction and workflow automation.</li>
+      </ul>
+
+      <h2 id="publications">Publications</h2>
       <p><strong>Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</strong><br>
-      <em>Bramesh, S. M., Mahadevu, M. P., & Nayaka, Y. L. B.</em><br>
-      The Asian Review of Civil Engineering, Vol. 14(1), pp. 37–42 (2025).<br>
-      DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261" target="_blank">https://doi.org/10.70112/tarce-2025.14.1.4261</a></p>
-    </section>
+      Bramesh, S. M., Mahadevu, M. P., & Nayaka, Y. L. B.<br>
+      The Asian Review of Civil Engineering, Vol. 14(1), pp. 37–42 (2025)<br>
+      DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261">10.70112/tarce-2025.14.1.4261</a><br>
+      Published by ISROJ</p>
 
-    <section id="achievements">
-      <h2>Achievements & Certifications</h2>
+      <h2 id="achievements">Achievements & Certifications</h2>
       <ul>
         <li>Developed and hosted IoT app <strong>DEV-IOT</strong> using Netlify and Android Studio.</li>
         <li>Published research paper in TARCE Journal (ISROJ).</li>
         <li>NPTEL Certifications: Python Programming, Cloud Computing.</li>
       </ul>
-    </section>
 
-    <section id="hobbies">
-      <h2>Hobbies & Interests</h2>
-      <p>Outside of technology, I enjoy cricket, table tennis, movie reviewing, and creative arts like painting and drawing, which inspire creativity and problem-solving in my professional work.</p>
-    </section>
+      <h2 id="hobbies">Hobbies & Interests</h2>
+      <p>I enjoy cricket, table tennis, movie reviewing, and creative arts like painting and drawing.</p>
 
-    <section id="links">
-      <h2>External Links</h2>
+      <h2 id="links">External Links</h2>
       <ul>
-        <li><a href="https://github.com/Devputta" target="_blank">GitHub Profile</a></li>
-        <li><a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/" target="_blank">LinkedIn Profile</a></li>
+        <li><a href="https://github.com/Devputta">GitHub Profile</a></li>
+        <li><a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">LinkedIn Profile</a></li>
       </ul>
     </section>
   </main>
-
-  <script>
-    const links = document.querySelectorAll('#sidebar a');
-    window.addEventListener('scroll', () => {
-      let fromTop = window.scrollY + 100;
-      links.forEach(link => {
-        const section = document.querySelector(link.getAttribute('href'));
-        if (
-          section.offsetTop <= fromTop &&
-          section.offsetTop + section.offsetHeight > fromTop
-        ) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    });
-  </script>
 </body>
 </html>
