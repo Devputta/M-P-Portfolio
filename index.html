@@ -5,28 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mahadevu M P - Portfolio</title>
   <style>
+    /* === WIKIPEDIA-LIKE THEME === */
     body {
-      font-family: 'Georgia', serif;
+      font-family: "Linux Libertine", "Georgia", serif;
       margin: 0;
-      background-color: #fff;
+      background-color: #ffffff;
       color: #202122;
       line-height: 1.6;
     }
     header {
       background-color: #f8f9fa;
-      padding: 15px 20px;
       border-bottom: 1px solid #a2a9b1;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 10px 15px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header h1 {
-      margin: 0;
       font-size: 1.6em;
+      margin: 0;
+      font-weight: normal;
     }
     .nav-toggle {
       display: none;
@@ -34,11 +35,13 @@
       font-size: 1.6em;
       color: #0645ad;
     }
+
+    /* Sidebar */
     nav {
+      width: 200px;
       background-color: #f8f9fa;
       border-right: 1px solid #a2a9b1;
-      padding: 20px;
-      width: 220px;
+      padding: 15px;
       position: fixed;
       top: 60px;
       bottom: 0;
@@ -46,20 +49,22 @@
     }
     nav a {
       display: block;
-      margin-bottom: 8px;
       color: #0645ad;
       text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 0.95em;
     }
     nav a:hover {
       text-decoration: underline;
     }
+
+    /* Main content layout */
     main {
-      margin-left: 260px;
-      max-width: 900px;
-      padding: 20px;
+      margin-left: 240px;
       display: flex;
-      flex-direction: row;
       gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
     }
     .content {
       flex: 3;
@@ -68,24 +73,34 @@
       flex: 1;
       border: 1px solid #a2a9b1;
       background-color: #f8f9fa;
-      padding: 10px;
       font-size: 0.9em;
+      padding: 10px;
       max-width: 260px;
       height: fit-content;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .infobox img {
       width: 100%;
       border: 1px solid #a2a9b1;
+      margin-bottom: 10px;
     }
+    .infobox p {
+      margin: 6px 0;
+    }
+
+    /* Typography */
     h2 {
       border-bottom: 1px solid #a2a9b1;
       color: #0645ad;
+      font-size: 1.4em;
+      margin-top: 1.2em;
       padding-bottom: 3px;
     }
     h3 {
-      margin-top: 1em;
       color: #0645ad;
+      font-size: 1.1em;
+      margin-top: 1em;
     }
     a {
       color: #0645ad;
@@ -94,33 +109,38 @@
     a:hover {
       text-decoration: underline;
     }
+
     ul {
       margin-top: 0;
     }
     table {
       border-collapse: collapse;
       width: 100%;
+      font-size: 0.95em;
     }
-    table, th, td {
+    th, td {
       border: 1px solid #a2a9b1;
-      padding: 5px;
+      padding: 6px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f3f5;
     }
 
-    /* Mobile Responsive Styles */
+    /* === MOBILE RESPONSIVE === */
     @media (max-width: 900px) {
-      nav {
-        display: none;
-        position: fixed;
-        width: 200px;
-        top: 60px;
-        left: 0;
-        background-color: #f8f9fa;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-        z-index: 999;
-        height: calc(100% - 60px);
-      }
       .nav-toggle {
         display: block;
+      }
+      nav {
+        display: none;
+        width: 220px;
+        top: 55px;
+        left: 0;
+        position: fixed;
+        height: calc(100% - 55px);
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        z-index: 999;
       }
       main {
         margin-left: 0;
@@ -128,25 +148,25 @@
         padding: 15px;
       }
       .infobox {
-        max-width: 100%;
         order: -1;
-        margin-bottom: 20px;
+        max-width: 100%;
       }
       table {
-        font-size: 0.9em;
+        font-size: 0.85em;
       }
     }
   </style>
   <script>
     function toggleNav() {
-      const nav = document.querySelector('nav');
-      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+      const nav = document.querySelector("nav");
+      nav.style.display = nav.style.display === "block" ? "none" : "block";
     }
   </script>
 </head>
+
 <body>
   <header>
-    <h1>Mahadevu M P - Portfolio</h1>
+    <h1>Mahadevu M P</h1>
     <span class="nav-toggle" onclick="toggleNav()">☰</span>
   </header>
 
@@ -165,19 +185,23 @@
   <main>
     <aside class="infobox">
       <img src="images/profile.jpg" alt="Mahadevu M P" />
-      <p><strong>Full Name:</strong> Mahadevu M P</p>
+      <p><strong>Full name:</strong> Mahadevu M P</p>
       <p><strong>Field:</strong> Information Science & Engineering</p>
       <p><strong>College:</strong> PES College of Engineering, Mandya</p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/Devputta">github.com/Devputta</a></p>
+      <p><strong>Emails:</strong><br>
+        <a href="mailto:pmahadev592@gmail.com">pmahadev592@gmail.com</a><br>
+        <a href="mailto:mahadevump657@gmail.com">mahadevump657@gmail.com</a>
+      </p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/Devputta">Devputta</a></p>
       <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">mahadevu-m-p</a></p>
     </aside>
 
     <section class="content">
       <h2 id="about">About Me</h2>
-      <p>I am Mahadevu M P, a passionate and detail-oriented Information Science and Engineering graduate from PES College of Engineering, Mandya, with a CGPA of 7.79/10. My academic and professional experiences have strengthened my expertise in data analytics, machine learning, and automation-based projects. I am committed to applying technology creatively to build scalable, efficient, and impactful real-world solutions.</p>
+      <p>I am Mahadevu M P, a passionate and detail-oriented Information Science and Engineering graduate from PES College of Engineering, Mandya, with a CGPA of 7.79/10. My academic and professional experiences have strengthened my expertise in data analytics, machine learning, and automation-based projects.</p>
 
       <h2 id="career">Career Objective</h2>
-      <p>To obtain a challenging position in an organization that promotes innovation, continuous learning, and growth. I aim to leverage my technical and analytical skills in data analysis, IoT, and software development to contribute to meaningful projects that create real-world impact and enhance organizational efficiency.</p>
+      <p>To obtain a challenging position in an organization that promotes innovation and continuous learning. I aim to leverage my technical and analytical skills in data analysis, IoT, and software development to contribute to impactful projects that enhance organizational efficiency.</p>
 
       <h2 id="education">Education</h2>
       <table>
@@ -188,7 +212,7 @@
       <h2 id="skills">Technical Skills</h2>
       <ul>
         <li><strong>Programming Languages:</strong> Python, Java, C</li>
-        <li><strong>Frameworks & Tools:</strong> Django, Flask, Visual Studio Code</li>
+        <li><strong>Frameworks & Tools:</strong> Django, Flask, VS Code</li>
         <li><strong>Databases:</strong> MySQL, SQLite</li>
         <li><strong>Data Analytics & BI:</strong> Power BI, Power Query, DAX</li>
         <li><strong>Machine Learning:</strong> TensorFlow, Scikit-learn, Pandas, NumPy</li>
@@ -200,29 +224,22 @@
 
       <h3>1. College Information Telegram Bot</h3>
       <ul>
-        <li>Developed a Telegram bot capable of delivering college-related information through automated chat interactions.</li>
-        <li>Designed backend logic in Python to handle user queries.</li>
-        <li>Integrated the Telegram Bot API and college data sources.</li>
-        <li>Used NLP techniques for intelligent query understanding.</li>
-        <li>Provided quick and accurate responses for user requests.</li>
+        <li>Developed a Telegram bot capable of delivering college-related information via automated chats.</li>
+        <li>Designed backend logic in Python and integrated Telegram Bot API.</li>
+        <li>Used NLP techniques for query understanding.</li>
         <li>🔗 <a href="https://github.com/Devputta">GitHub Repository</a></li>
       </ul>
 
       <h3>2. Taxi Fare Prediction Using Machine Learning</h3>
       <ul>
-        <li>A predictive model designed to estimate taxi fares based on dynamic parameters such as distance, duration, and time of day.</li>
-        <li>Collected and cleaned real-world fare data.</li>
-        <li>Implemented supervised regression models for prediction.</li>
-        <li>Visualized results and performance using Matplotlib.</li>
-        <li>Technologies: Python, Pandas, NumPy, Scikit-learn</li>
+        <li>Built a predictive model to estimate taxi fares based on distance, duration, and time of day.</li>
+        <li>Implemented supervised regression models using Scikit-learn.</li>
       </ul>
 
       <h3>3. Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</h3>
       <ul>
-        <li>Developed an IoT-based water monitoring and control system integrated with predictive analytics.</li>
-        <li>Used ESP32 microcontroller and sensors for real-time data collection.</li>
-        <li>Implemented LSTM for forecasting and DBSCAN for anomaly detection.</li>
-        <li>Improved water management through data-driven insights.</li>
+        <li>Developed IoT-based system integrated with predictive analytics.</li>
+        <li>Used ESP32, sensors, LSTM, and DBSCAN for data analysis.</li>
         <li>📅 Published on: 6 April 2025</li>
         <li>🧾 Journal: The Asian Review of Civil Engineering (TARCE)</li>
         <li>🔗 DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261">10.70112/tarce-2025.14.1.4261</a></li>
@@ -230,29 +247,26 @@
 
       <h3>4. Supplier Invoice Process Automation</h3>
       <ul>
-        <li>An automation system for supplier invoice handling using Optical Character Recognition (OCR).</li>
-        <li>Automated text extraction and data validation using Python and OpenCV.</li>
-        <li>Integrated workflow reduced manual intervention.</li>
-        <li>Increased accuracy in financial record processing.</li>
-        <li>Technologies: Python, OpenCV, Pandas, Automation APIs</li>
+        <li>Automated invoice processing using OCR and Python.</li>
+        <li>Used OpenCV for text extraction and workflow automation.</li>
       </ul>
 
       <h2 id="publications">Publications</h2>
       <p><strong>Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</strong><br>
       Bramesh, S. M., Mahadevu, M. P., & Nayaka, Y. L. B.<br>
       The Asian Review of Civil Engineering, Vol. 14(1), pp. 37–42 (2025)<br>
-      DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261">https://doi.org/10.70112/tarce-2025.14.1.4261</a><br>
-      Published by International Scientific Research Organization Journals (ISROJ)</p>
+      DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261">10.70112/tarce-2025.14.1.4261</a><br>
+      Published by ISROJ</p>
 
       <h2 id="achievements">Achievements & Certifications</h2>
       <ul>
-        <li>Developed and hosted a custom IoT app <strong>DEV-IOT</strong> using Netlify and Android Studio.</li>
+        <li>Developed and hosted IoT app <strong>DEV-IOT</strong> using Netlify and Android Studio.</li>
         <li>Published research paper in TARCE Journal (ISROJ).</li>
         <li>NPTEL Certifications: Python Programming, Cloud Computing.</li>
       </ul>
 
       <h2 id="hobbies">Hobbies & Interests</h2>
-      <p>Outside of technology, I enjoy cricket, table tennis, movie reviewing, and creative arts like painting and drawing, which inspire creativity and problem-solving in my professional work.</p>
+      <p>I enjoy cricket, table tennis, movie reviewing, and creative arts like painting and drawing.</p>
 
       <h2 id="links">External Links</h2>
       <ul>
