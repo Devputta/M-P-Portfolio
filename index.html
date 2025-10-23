@@ -7,131 +7,130 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background-color: #f8f9fa;
-      scroll-behavior: smooth;
+      font-family: "Georgia", "Times New Roman", serif;
+      background: #ffffff;
+      color: #202122;
+      line-height: 1.7;
     }
 
     /* Header */
     header {
+      background: #f8f9fa;
+      border-bottom: 1px solid #a2a9b1;
+      padding: 10px 20px;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: #0d1b2a;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
       z-index: 1000;
     }
 
     header h1 {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       margin: 0;
+      color: #202122;
     }
 
-    /* Sidebar */
+    /* Sidebar (Table of Contents) */
     #sidebar {
       position: fixed;
-      left: 0;
       top: 60px;
-      width: 230px;
+      left: 0;
+      width: 250px;
+      padding: 10px 15px;
+      border-right: 1px solid #a2a9b1;
+      background: #f8f9fa;
       height: 100%;
-      background: #1b263b;
-      color: white;
-      padding-top: 20px;
-      transition: transform 0.3s ease;
       overflow-y: auto;
-      z-index: 999;
     }
 
-    #sidebar.hidden {
-      transform: translateX(-100%);
+    #sidebar h3 {
+      font-size: 1rem;
+      border-bottom: 1px solid #a2a9b1;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
     }
 
     #sidebar a {
       display: block;
-      color: #ddd;
-      padding: 10px 20px;
+      color: #0645ad;
       text-decoration: none;
-      transition: 0.3s;
+      padding: 4px 0;
+      font-size: 0.95rem;
     }
 
-    #sidebar a:hover, #sidebar a.active {
-      background: #415a77;
-      color: #fff;
+    #sidebar a:hover {
+      text-decoration: underline;
     }
 
-    /* Hamburger Button */
-    .menu-btn {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      display: none;
+    #sidebar a.active {
+      font-weight: bold;
+      color: #000;
     }
 
     /* Main Content */
     main {
-      margin-left: 250px;
-      padding: 100px 30px 40px;
-    }
-
-    section {
-      background: white;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 20px 30px;
+      margin-left: 270px;
+      padding: 90px 30px 40px;
+      max-width: 900px;
     }
 
     h2 {
-      border-bottom: 2px solid #1b263b;
-      padding-bottom: 5px;
-      color: #1b263b;
+      border-bottom: 1px solid #a2a9b1;
+      color: #202122;
+      padding-bottom: 4px;
+      margin-top: 40px;
+    }
+
+    h3 {
+      color: #202122;
+      margin-top: 25px;
     }
 
     ul {
-      margin-left: 20px;
+      margin-left: 30px;
     }
 
     a {
-      color: #003566;
+      color: #0645ad;
+      text-decoration: none;
     }
 
-    /* Responsive Styles */
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
     @media (max-width: 900px) {
-      .menu-btn {
-        display: block;
-      }
-
       #sidebar {
-        transform: translateX(-100%);
+        position: relative;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #a2a9b1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
-      #sidebar.show {
-        transform: translateX(0);
+      #sidebar a {
+        margin: 5px 10px;
       }
 
       main {
         margin-left: 0;
-        padding: 90px 20px;
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Mahadevu M P</h1>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
   </header>
 
-  <nav id="sidebar" class="hidden">
+  <nav id="sidebar">
+    <h3>Contents</h3>
     <a href="#about">About Me</a>
     <a href="#career">Career Objective</a>
     <a href="#projects">Projects</a>
@@ -142,88 +141,69 @@
   </nav>
 
   <main>
-    <!-- ABOUT ME -->
     <section id="about">
       <h2>About Me</h2>
       <p>I am <strong>Mahadevu M P</strong>, a Software Engineer with a passion for building intelligent, scalable, and efficient solutions. With a background in Information Science and Engineering, I specialize in data analytics, machine learning, and automation-driven projects. I thrive on transforming complex problems into clean, innovative code and constantly explore new technologies to deliver impactful, real-world software solutions.</p>
     </section>
 
-    <!-- CAREER OBJECTIVE -->
     <section id="career">
       <h2>Career Objective</h2>
       <p>As a Software Engineer, I aim to contribute to an organization that encourages innovation, technical excellence, and continuous learning. I leverage my skills in software development, data analysis, and automation to build robust applications, optimize processes, and solve real-world challenges. My goal is to create solutions that are not only functional but also intelligent, efficient, and future-ready.</p>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects">
       <h2>Projects</h2>
 
-      <h3>1. College Information Telegram Bot</h3>
+      <h3>College Information Telegram Bot</h3>
       <ul>
         <li>Developed a Telegram bot capable of delivering college-related information through automated chat interactions.</li>
-        <li>Designed backend logic in Python to handle user queries.</li>
-        <li>Integrated the Telegram Bot API and college data sources.</li>
+        <li>Designed backend logic in Python and integrated with Telegram Bot API.</li>
         <li>Used NLP techniques for intelligent query understanding.</li>
-        <li>Provided quick and accurate responses for user requests.</li>
       </ul>
-      <p>🔗 <a href="https://github.com/Devputta" target="_blank">GitHub Repository: github.com/Devputta</a></p>
 
-      <h3>2. Taxi Fare Prediction Using Machine Learning</h3>
+      <h3>Taxi Fare Prediction Using Machine Learning</h3>
       <ul>
-        <li>Designed a predictive model to estimate taxi fares based on distance, duration, and time of day.</li>
-        <li>Collected and cleaned real-world fare data.</li>
+        <li>Designed a predictive model to estimate taxi fares based on distance and time data.</li>
         <li>Implemented supervised regression models for prediction.</li>
-        <li>Visualized results and performance using Matplotlib.</li>
+        <li>Visualized results using Matplotlib.</li>
       </ul>
-      <p><strong>Technologies:</strong> Python, Pandas, NumPy, Scikit-learn</p>
 
-      <h3>3. Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</h3>
+      <h3>Enhancing Water Management in Buildings Through IoT-Based Monitoring</h3>
       <ul>
-        <li>Developed an IoT-based water monitoring and control system integrated with predictive analytics.</li>
-        <li>Used ESP32 microcontroller and sensors for real-time data collection.</li>
-        <li>Implemented LSTM for forecasting and DBSCAN for anomaly detection.</li>
-        <li>Improved water management through data-driven insights.</li>
+        <li>Developed an IoT-based water monitoring system integrated with predictive analytics.</li>
+        <li>Used ESP32, LSTM, and DBSCAN for real-time monitoring and anomaly detection.</li>
       </ul>
-      <p>📅 Published on: 6 April 2025<br>
-         🧾 Journal: The Asian Review of Civil Engineering (TARCE)<br>
-         🔗 DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261" target="_blank">https://doi.org/10.70112/tarce-2025.14.1.4261</a></p>
+      <p><em>Published in TARCE Journal (2025)</em></p>
 
-      <h3>4. Supplier Invoice Process Automation</h3>
+      <h3>Supplier Invoice Process Automation</h3>
       <ul>
-        <li>Developed an automation system for supplier invoice handling using Optical Character Recognition (OCR).</li>
-        <li>Automated text extraction and data validation using Python and OpenCV.</li>
-        <li>Reduced manual intervention and increased accuracy in financial record processing.</li>
+        <li>Automated supplier invoice handling using OCR (Optical Character Recognition).</li>
+        <li>Reduced manual data entry and improved accuracy in financial processing.</li>
       </ul>
-      <p><strong>Technologies:</strong> Python, OpenCV, Pandas, Automation APIs</p>
     </section>
 
-    <!-- PUBLICATIONS -->
     <section id="publications">
       <h2>Publications</h2>
       <p><strong>Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</strong><br>
       <em>Bramesh, S. M., Mahadevu, M. P., & Nayaka, Y. L. B.</em><br>
-      The Asian Review of Civil Engineering, Vol. 14(1), pp. 37–42 (2025)<br>
-      DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261" target="_blank">https://doi.org/10.70112/tarce-2025.14.1.4261</a><br>
-      Published by International Scientific Research Organization Journals (ISROJ)</p>
+      The Asian Review of Civil Engineering, Vol. 14(1), pp. 37–42 (2025).<br>
+      DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261" target="_blank">https://doi.org/10.70112/tarce-2025.14.1.4261</a></p>
     </section>
 
-    <!-- ACHIEVEMENTS -->
     <section id="achievements">
       <h2>Achievements & Certifications</h2>
       <ul>
-        <li>Developed and hosted a custom IoT app <strong>DEV-IOT</strong> using Netlify and Android Studio.</li>
+        <li>Developed and hosted IoT app <strong>DEV-IOT</strong> using Netlify and Android Studio.</li>
         <li>Published research paper in TARCE Journal (ISROJ).</li>
         <li>NPTEL Certifications: Python Programming, Cloud Computing.</li>
       </ul>
     </section>
 
-    <!-- HOBBIES -->
     <section id="hobbies">
       <h2>Hobbies & Interests</h2>
       <p>Outside of technology, I enjoy cricket, table tennis, movie reviewing, and creative arts like painting and drawing, which inspire creativity and problem-solving in my professional work.</p>
     </section>
 
-    <!-- LINKS -->
     <section id="links">
       <h2>External Links</h2>
       <ul>
@@ -234,23 +214,9 @@
   </main>
 
   <script>
-    const sidebar = document.getElementById('sidebar');
-    const links = sidebar.querySelectorAll('a');
-
-    function toggleMenu() {
-      sidebar.classList.toggle('show');
-    }
-
-    // Close sidebar when clicking a link (on mobile)
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 900) sidebar.classList.remove('show');
-      });
-    });
-
-    // Highlight active section
+    const links = document.querySelectorAll('#sidebar a');
     window.addEventListener('scroll', () => {
-      let fromTop = window.scrollY + 120;
+      let fromTop = window.scrollY + 100;
       links.forEach(link => {
         const section = document.querySelector(link.getAttribute('href'));
         if (
