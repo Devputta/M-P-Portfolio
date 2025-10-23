@@ -1,280 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahadevu M P - Portfolio</title>
-  <style>
-    /* === WIKIPEDIA-LIKE THEME === */
-    body {
-      font-family: "Linux Libertine", "Georgia", serif;
-      margin: 0;
-      background-color: #ffffff;
-      color: #202122;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #f8f9fa;
-      border-bottom: 1px solid #a2a9b1;
-      padding: 10px 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      font-size: 1.6em;
-      margin: 0;
-      font-weight: normal;
-    }
-    .nav-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 1.6em;
-      color: #0645ad;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mahadevu M P - Portfolio</title>
+<style>
+/* ===== WIKIPEDIA STYLE ===== */
+body {
+  font-family: "Linux Libertine", "Georgia", serif;
+  margin: 0;
+  background-color: #fff;
+  color: #202122;
+  line-height: 1.6;
+}
 
-    /* Sidebar */
-    nav {
-      width: 200px;
-      background-color: #f8f9fa;
-      border-right: 1px solid #a2a9b1;
-      padding: 15px;
-      position: fixed;
-      top: 60px;
-      bottom: 0;
-      overflow-y: auto;
-    }
-    nav a {
-      display: block;
-      color: #0645ad;
-      text-decoration: none;
-      margin-bottom: 8px;
-      font-size: 0.95em;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
+header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #a2a9b1;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header h1 {
+  font-size: 1.6em;
+  margin: 0;
+}
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.6em;
+  color: #0645ad;
+  user-select: none;
+}
 
-    /* Main content layout */
-    main {
-      margin-left: 240px;
-      display: flex;
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-    }
-    .content {
-      flex: 3;
-    }
-    .infobox {
-      flex: 1;
-      border: 1px solid #a2a9b1;
-      background-color: #f8f9fa;
-      font-size: 0.9em;
-      padding: 10px;
-      max-width: 260px;
-      height: fit-content;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .infobox img {
-      width: 100%;
-      border: 1px solid #a2a9b1;
-      margin-bottom: 10px;
-    }
-    .infobox p {
-      margin: 6px 0;
-    }
+/* ===== Sidebar Navigation ===== */
+nav {
+  width: 200px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #a2a9b1;
+  padding: 15px;
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+nav a {
+  display: block;
+  color: #0645ad;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 0.95em;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+nav a:hover {
+  background-color: #e6e6e6;
+}
+nav a.active {
+  background-color: #dbeafe;
+  font-weight: bold;
+  border-left: 3px solid #0645ad;
+}
 
-    /* Typography */
-    h2 {
-      border-bottom: 1px solid #a2a9b1;
-      color: #0645ad;
-      font-size: 1.4em;
-      margin-top: 1.2em;
-      padding-bottom: 3px;
-    }
-    h3 {
-      color: #0645ad;
-      font-size: 1.1em;
-      margin-top: 1em;
-    }
-    a {
-      color: #0645ad;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+/* ===== Main Content ===== */
+main {
+  margin-left: 240px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+}
 
-    ul {
-      margin-top: 0;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      font-size: 0.95em;
-    }
-    th, td {
-      border: 1px solid #a2a9b1;
-      padding: 6px;
-      text-align: left;
-    }
-    th {
-      background-color: #f1f3f5;
-    }
+.content {
+  flex: 3;
+}
 
-    /* === MOBILE RESPONSIVE === */
-    @media (max-width: 900px) {
-      .nav-toggle {
-        display: block;
-      }
-      nav {
-        display: none;
-        width: 220px;
-        top: 55px;
-        left: 0;
-        position: fixed;
-        height: calc(100% - 55px);
-        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-        z-index: 999;
-      }
-      main {
-        margin-left: 0;
-        flex-direction: column;
-        padding: 15px;
-      }
-      .infobox {
-        order: -1;
-        max-width: 100%;
-      }
-      table {
-        font-size: 0.85em;
-      }
-    }
-  </style>
-  <script>
-    function toggleNav() {
-      const nav = document.querySelector("nav");
-      nav.style.display = nav.style.display === "block" ? "none" : "block";
-    }
-  </script>
+.infobox {
+  flex: 1;
+  border: 1px solid #a2a9b1;
+  background-color: #f8f9fa;
+  font-size: 0.9em;
+  padding: 10px;
+  max-width: 260px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  align-self: flex-start;
+}
+.infobox img {
+  width: 100%;
+  border: 1px solid #a2a9b1;
+  margin-bottom: 10px;
+}
+.infobox p {
+  margin: 6px 0;
+}
+
+/* ===== Typography ===== */
+h2 {
+  border-bottom: 1px solid #a2a9b1;
+  color: #0645ad;
+  font-size: 1.4em;
+  margin-top: 1.2em;
+  padding-bottom: 3px;
+}
+h3 {
+  color: #0645ad;
+  font-size: 1.1em;
+  margin-top: 1em;
+}
+a {
+  color: #0645ad;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+ul {
+  margin-top: 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.95em;
+}
+th, td {
+  border: 1px solid #a2a9b1;
+  padding: 6px;
+  text-align: left;
+}
+th {
+  background-color: #f1f3f5;
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: block;
+  }
+  nav {
+    transform: translateX(-100%);
+    width: 220px;
+    top: 55px;
+    left: 0;
+    position: fixed;
+    height: calc(100% - 55px);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+  nav.open {
+    transform: translateX(0);
+  }
+  main {
+    margin-left: 0;
+    flex-direction: column;
+    padding: 15px;
+  }
+  .infobox {
+    order: -1;
+    max-width: 100%;
+  }
+  table {
+    font-size: 0.85em;
+  }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <h1>Mahadevu M P</h1>
-    <span class="nav-toggle" onclick="toggleNav()">☰</span>
-  </header>
+<header>
+  <h1>Mahadevu M P</h1>
+  <span class="nav-toggle" onclick="toggleNav()">☰</span>
+</header>
 
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#career">Career Objective</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Technical Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#hobbies">Hobbies</a>
-    <a href="#links">External Links</a>
-  </nav>
+<nav id="sidebar">
+  <a href="#about">About Me</a>
+  <a href="#career">Career Objective</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Technical Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#publications">Publications</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#hobbies">Hobbies</a>
+  <a href="#links">External Links</a>
+</nav>
 
-  <main>
-    <aside class="infobox">
-      <img src="images/profile.jpg" alt="Mahadevu M P" />
-      <p><strong>Full name:</strong> Mahadevu M P</p>
-      <p><strong>Field:</strong> Information Science & Engineering</p>
-      <p><strong>College:</strong> PES College of Engineering, Mandya</p>
-      <p><strong>Emails:</strong><br>
-        <a href="mailto:pmahadev592@gmail.com">pmahadev592@gmail.com</a><br>
-        <a href="mailto:mahadevump657@gmail.com">mahadevump657@gmail.com</a>
-      </p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/Devputta">Devputta</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">mahadevu-m-p</a></p>
-    </aside>
+<main>
+  <aside class="infobox">
+    <img src="images/profile.jpg" alt="Mahadevu M P" />
+    <p><strong>Full name:</strong> Mahadevu M P</p>
+    <p><strong>Field:</strong> Information Science & Engineering</p>
+    <p><strong>College:</strong> PES College of Engineering, Mandya</p>
+    <p><strong>Emails:</strong><br>
+      <a href="mailto:pmahadev592@gmail.com">pmahadev592@gmail.com</a><br>
+      <a href="mailto:mahadevump657@gmail.com">mahadevump657@gmail.com</a>
+    </p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/Devputta">Devputta</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">mahadevu-m-p</a></p>
+  </aside>
 
-    <section class="content">
-      <h2 id="about">About Me</h2>
-      <p>I am Mahadevu M P, a Software Engineer with a passion for building intelligent, scalable, and efficient solutions. With a background in Information Science and Engineering, I specialize in data analytics, machine learning, and automation-driven projects. I thrive on transforming complex problems into clean, innovative code and constantly explore new technologies to deliver impactful, real-world software solutions.</p>
+  <section class="content">
+    <h2 id="about">About Me</h2>
+    <p>I am Mahadevu M P, a passionate and detail-oriented Information Science and Engineering graduate from PES College of Engineering, Mandya, with a CGPA of 7.79/10.</p>
 
-      <h2 id="career">Career Objective</h2>
-      <p>As a Software Engineer, I aim to contribute to an organization that encourages innovation, technical excellence, and continuous learning. I leverage my skills in software development, data analysis, and automation to build robust applications, optimize processes, and solve real-world challenges. My goal is to create solutions that are not only functional but also intelligent, efficient, and future-ready.</p>
+    <h2 id="career">Career Objective</h2>
+    <p>To obtain a challenging position in an organization that promotes innovation and continuous learning.</p>
 
-      <h2 id="education">Education</h2>
-      <table>
-        <tr><th>Qualification</th><th>Institution</th><th>CGPA / %</th><th>Year</th></tr>
-        <tr><td>B.E. in Information Science & Engineering</td><td>PES College of Engineering, Mandya</td><td>7.79 / 10</td><td>2025</td></tr>
-      </table>
+    <h2 id="education">Education</h2>
+    <table>
+      <tr><th>Qualification</th><th>Institution</th><th>CGPA / %</th><th>Year</th></tr>
+      <tr><td>B.E. in Information Science & Engineering</td><td>PES College of Engineering, Mandya</td><td>7.79 / 10</td><td>2025</td></tr>
+    </table>
 
-      <h2 id="skills">Technical Skills</h2>
-      <ul>
-        <li><strong>Programming Languages:</strong> Python, Java, C</li>
-        <li><strong>Frameworks & Tools:</strong> Django, Flask, VS Code</li>
-        <li><strong>Databases:</strong> MySQL, SQLite</li>
-        <li><strong>Data Analytics & BI:</strong> Power BI, Power Query, DAX</li>
-        <li><strong>Machine Learning:</strong> TensorFlow, Scikit-learn, Pandas, NumPy</li>
-        <li><strong>Version Control:</strong> Git, GitHub</li>
-        <li><strong>Other Tools:</strong> API Integration, Automation APIs, Data Visualization</li>
-      </ul>
+    <h2 id="skills">Technical Skills</h2>
+    <ul>
+      <li><strong>Programming Languages:</strong> Python, Java, C</li>
+      <li><strong>Frameworks & Tools:</strong> Django, Flask, VS Code</li>
+      <li><strong>Databases:</strong> MySQL, SQLite</li>
+      <li><strong>Data Analytics & BI:</strong> Power BI, Power Query, DAX</li>
+      <li><strong>Machine Learning:</strong> TensorFlow, Scikit-learn, Pandas, NumPy</li>
+      <li><strong>Version Control:</strong> Git, GitHub</li>
+      <li><strong>Other Tools:</strong> API Integration, Automation APIs, Data Visualization</li>
+    </ul>
 
-      <h2 id="projects">Projects</h2>
+    <h2 id="projects">Projects</h2>
+    <h3>1. College Information Telegram Bot</h3>
+    <ul>
+      <li>Developed a Telegram bot capable of delivering college-related information via automated chats.</li>
+      <li>🔗 <a href="https://github.com/Devputta">GitHub Repository</a></li>
+    </ul>
 
-      <h3>1. College Information Telegram Bot</h3>
-      <ul>
-        <li>Developed a Telegram bot capable of delivering college-related information via automated chats.</li>
-        <li>Designed backend logic in Python and integrated Telegram Bot API.</li>
-        <li>Used NLP techniques for query understanding.</li>
-        <li>🔗 <a href="https://github.com/Devputta">GitHub Repository</a></li>
-      </ul>
+    <h2 id="publications">Publications</h2>
+    <p><strong>Enhancing Water Management...</strong></p>
 
-      <h3>2. Taxi Fare Prediction Using Machine Learning</h3>
-      <ul>
-        <li>Built a predictive model to estimate taxi fares based on distance, duration, and time of day.</li>
-        <li>Implemented supervised regression models using Scikit-learn.</li>
-        <li>🔗 <a href="https://github.com/Devputta">GitHub Repository</a></li>
-      </ul>
+    <h2 id="achievements">Achievements & Certifications</h2>
+    <ul><li>NPTEL Certifications: Python, Cloud Computing</li></ul>
 
-      <h3>3. Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</h3>
-      <ul>
-        <li>Developed IoT-based system integrated with predictive analytics.</li>
-        <li>Used ESP32, sensors, LSTM, and DBSCAN for data analysis.</li>
-        <li>📅 Published on: 6 April 2025</li>
-        <li>🧾 Journal: The Asian Review of Civil Engineering (TARCE)</li>
-        <li>🔗 DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261">10.70112/tarce-2025.14.1.4261</a></li>
-      </ul>
+    <h2 id="hobbies">Hobbies & Interests</h2>
+    <p>I enjoy cricket, table tennis, movie reviewing, and creative arts.</p>
 
-      <h3>4. Supplier Invoice Process Automation</h3>
-      <ul>
-        <li>Automated invoice processing using OCR and Python.</li>
-        <li>Used OpenCV for text extraction and workflow automation.</li>
-      </ul>
+    <h2 id="links">External Links</h2>
+    <ul>
+      <li><a href="https://github.com/Devputta">GitHub Profile</a></li>
+      <li><a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">LinkedIn Profile</a></li>
+    </ul>
+  </section>
+</main>
 
-      <h2 id="publications">Publications</h2>
-      <p><strong>Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</strong><br>
-      Bramesh, S. M., Mahadevu, M. P., & Nayaka, Y. L. B.<br>
-      The Asian Review of Civil Engineering, Vol. 14(1), pp. 37–42 (2025)<br>
-      DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261">10.70112/tarce-2025.14.1.4261</a><br>
-      Published by ISROJ</p>
+<script>
+/* Toggle navigation for mobile */
+function toggleNav() {
+  document.getElementById("sidebar").classList.toggle("open");
+}
 
-      <h2 id="achievements">Achievements & Certifications</h2>
-      <ul>
-        <li>Developed and hosted IoT app <strong>DEV-IOT</strong> using Netlify and Android Studio.</li>
-        <li>Published research paper in TARCE Journal (ISROJ).</li>
-        <li>NPTEL Certifications: Python Programming, Cloud Computing.</li>
-      </ul>
+/* Highlight active section */
+const sections = document.querySelectorAll("section h2[id]");
+const navLinks = document.querySelectorAll("nav a");
 
-      <h2 id="hobbies">Hobbies & Interests</h2>
-      <p>I enjoy cricket, table tennis, movie reviewing, and creative arts like painting and drawing.</p>
-
-      <h2 id="links">External Links</h2>
-      <ul>
-        <li><a href="https://github.com/Devputta">GitHub Profile</a></li>
-        <li><a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">LinkedIn Profile</a></li>
-      </ul>
-    </section>
-  </main>
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
 </body>
 </html>
