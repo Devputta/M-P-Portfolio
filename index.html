@@ -1,281 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mahadevu M P - Portfolio</title>
-<style>
-/* ===== WIKIPEDIA STYLE ===== */
-body {
-  font-family: "Linux Libertine", "Georgia", serif;
-  margin: 0;
-  background-color: #fff;
-  color: #202122;
-  line-height: 1.6;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahadevu M P - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #f8f9fa;
+      scroll-behavior: smooth;
+    }
 
-header {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #a2a9b1;
-  padding: 10px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-header h1 {
-  font-size: 1.6em;
-  margin: 0;
-}
-.nav-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 1.6em;
-  color: #0645ad;
-  user-select: none;
-}
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #0d1b2a;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
 
-/* ===== Sidebar Navigation ===== */
-nav {
-  width: 200px;
-  background-color: #f8f9fa;
-  border-right: 1px solid #a2a9b1;
-  padding: 15px;
-  position: fixed;
-  top: 60px;
-  bottom: 0;
-  overflow-y: auto;
-  transition: transform 0.3s ease;
-}
-nav a {
-  display: block;
-  color: #0645ad;
-  text-decoration: none;
-  margin-bottom: 8px;
-  font-size: 0.95em;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-nav a:hover {
-  background-color: #e6e6e6;
-}
-nav a.active {
-  background-color: #dbeafe;
-  font-weight: bold;
-  border-left: 3px solid #0645ad;
-}
+    header h1 {
+      font-size: 1.3rem;
+      margin: 0;
+    }
 
-/* ===== Main Content ===== */
-main {
-  margin-left: 240px;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-}
+    /* Sidebar */
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 60px;
+      width: 230px;
+      height: 100%;
+      background: #1b263b;
+      color: white;
+      padding-top: 20px;
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      z-index: 999;
+    }
 
-.content {
-  flex: 3;
-}
+    #sidebar.hidden {
+      transform: translateX(-100%);
+    }
 
-.infobox {
-  flex: 1;
-  border: 1px solid #a2a9b1;
-  background-color: #f8f9fa;
-  font-size: 0.9em;
-  padding: 10px;
-  max-width: 260px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  align-self: flex-start;
-}
-.infobox img {
-  width: 100%;
-  border: 1px solid #a2a9b1;
-  margin-bottom: 10px;
-}
-.infobox p {
-  margin: 6px 0;
-}
+    #sidebar a {
+      display: block;
+      color: #ddd;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
 
-/* ===== Typography ===== */
-h2 {
-  border-bottom: 1px solid #a2a9b1;
-  color: #0645ad;
-  font-size: 1.4em;
-  margin-top: 1.2em;
-  padding-bottom: 3px;
-}
-h3 {
-  color: #0645ad;
-  font-size: 1.1em;
-  margin-top: 1em;
-}
-a {
-  color: #0645ad;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-ul {
-  margin-top: 0;
-}
-table {
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 0.95em;
-}
-th, td {
-  border: 1px solid #a2a9b1;
-  padding: 6px;
-  text-align: left;
-}
-th {
-  background-color: #f1f3f5;
-}
+    #sidebar a:hover, #sidebar a.active {
+      background: #415a77;
+      color: #fff;
+    }
 
-/* ===== Mobile Responsive ===== */
-@media (max-width: 900px) {
-  .nav-toggle {
-    display: block;
-  }
-  nav {
-    transform: translateX(-100%);
-    width: 220px;
-    top: 55px;
-    left: 0;
-    position: fixed;
-    height: calc(100% - 55px);
-    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-    z-index: 999;
-  }
-  nav.open {
-    transform: translateX(0);
-  }
-  main {
-    margin-left: 0;
-    flex-direction: column;
-    padding: 15px;
-  }
-  .infobox {
-    order: -1;
-    max-width: 100%;
-  }
-  table {
-    font-size: 0.85em;
-  }
-}
-</style>
+    /* Hamburger Button */
+    .menu-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Main Content */
+    main {
+      margin-left: 250px;
+      padding: 100px 30px 40px;
+    }
+
+    section {
+      background: white;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px 30px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #1b263b;
+      padding-bottom: 5px;
+      color: #1b263b;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    a {
+      color: #003566;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+      .menu-btn {
+        display: block;
+      }
+
+      #sidebar {
+        transform: translateX(-100%);
+      }
+
+      #sidebar.show {
+        transform: translateX(0);
+      }
+
+      main {
+        margin-left: 0;
+        padding: 90px 20px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<header>
-  <h1>Mahadevu M P</h1>
-  <span class="nav-toggle" onclick="toggleNav()">☰</span>
-</header>
+  <header>
+    <h1>Mahadevu M P</h1>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </header>
 
-<nav id="sidebar">
-  <a href="#about">About Me</a>
-  <a href="#career">Career Objective</a>
-  <a href="#education">Education</a>
-  <a href="#skills">Technical Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#publications">Publications</a>
-  <a href="#achievements">Achievements</a>
-  <a href="#hobbies">Hobbies</a>
-  <a href="#links">External Links</a>
-</nav>
+  <nav id="sidebar" class="hidden">
+    <a href="#about">About Me</a>
+    <a href="#career">Career Objective</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#links">External Links</a>
+  </nav>
 
-<main>
-  <aside class="infobox">
-    <img src="images/profile.jpg" alt="Mahadevu M P" />
-    <p><strong>Full name:</strong> Mahadevu M P</p>
-    <p><strong>Field:</strong> Information Science & Engineering</p>
-    <p><strong>College:</strong> PES College of Engineering, Mandya</p>
-    <p><strong>Emails:</strong><br>
-      <a href="mailto:pmahadev592@gmail.com">pmahadev592@gmail.com</a><br>
-      <a href="mailto:mahadevump657@gmail.com">mahadevump657@gmail.com</a>
-    </p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/Devputta">Devputta</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">mahadevu-m-p</a></p>
-  </aside>
+  <main>
+    <!-- ABOUT ME -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am <strong>Mahadevu M P</strong>, a Software Engineer with a passion for building intelligent, scalable, and efficient solutions. With a background in Information Science and Engineering, I specialize in data analytics, machine learning, and automation-driven projects. I thrive on transforming complex problems into clean, innovative code and constantly explore new technologies to deliver impactful, real-world software solutions.</p>
+    </section>
 
-  <section class="content">
-    <h2 id="about">About Me</h2>
-    <p>I am Mahadevu M P, a passionate and detail-oriented Information Science and Engineering graduate from PES College of Engineering, Mandya, with a CGPA of 7.79/10.</p>
+    <!-- CAREER OBJECTIVE -->
+    <section id="career">
+      <h2>Career Objective</h2>
+      <p>As a Software Engineer, I aim to contribute to an organization that encourages innovation, technical excellence, and continuous learning. I leverage my skills in software development, data analysis, and automation to build robust applications, optimize processes, and solve real-world challenges. My goal is to create solutions that are not only functional but also intelligent, efficient, and future-ready.</p>
+    </section>
 
-    <h2 id="career">Career Objective</h2>
-    <p>To obtain a challenging position in an organization that promotes innovation and continuous learning.</p>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
 
-    <h2 id="education">Education</h2>
-    <table>
-      <tr><th>Qualification</th><th>Institution</th><th>CGPA / %</th><th>Year</th></tr>
-      <tr><td>B.E. in Information Science & Engineering</td><td>PES College of Engineering, Mandya</td><td>7.79 / 10</td><td>2025</td></tr>
-    </table>
+      <h3>1. College Information Telegram Bot</h3>
+      <ul>
+        <li>Developed a Telegram bot capable of delivering college-related information through automated chat interactions.</li>
+        <li>Designed backend logic in Python to handle user queries.</li>
+        <li>Integrated the Telegram Bot API and college data sources.</li>
+        <li>Used NLP techniques for intelligent query understanding.</li>
+        <li>Provided quick and accurate responses for user requests.</li>
+      </ul>
+      <p>🔗 <a href="https://github.com/Devputta" target="_blank">GitHub Repository: github.com/Devputta</a></p>
 
-    <h2 id="skills">Technical Skills</h2>
-    <ul>
-      <li><strong>Programming Languages:</strong> Python, Java, C</li>
-      <li><strong>Frameworks & Tools:</strong> Django, Flask, VS Code</li>
-      <li><strong>Databases:</strong> MySQL, SQLite</li>
-      <li><strong>Data Analytics & BI:</strong> Power BI, Power Query, DAX</li>
-      <li><strong>Machine Learning:</strong> TensorFlow, Scikit-learn, Pandas, NumPy</li>
-      <li><strong>Version Control:</strong> Git, GitHub</li>
-      <li><strong>Other Tools:</strong> API Integration, Automation APIs, Data Visualization</li>
-    </ul>
+      <h3>2. Taxi Fare Prediction Using Machine Learning</h3>
+      <ul>
+        <li>Designed a predictive model to estimate taxi fares based on distance, duration, and time of day.</li>
+        <li>Collected and cleaned real-world fare data.</li>
+        <li>Implemented supervised regression models for prediction.</li>
+        <li>Visualized results and performance using Matplotlib.</li>
+      </ul>
+      <p><strong>Technologies:</strong> Python, Pandas, NumPy, Scikit-learn</p>
 
-    <h2 id="projects">Projects</h2>
-    <h3>1. College Information Telegram Bot</h3>
-    <ul>
-      <li>Developed a Telegram bot capable of delivering college-related information via automated chats.</li>
-      <li>🔗 <a href="https://github.com/Devputta">GitHub Repository</a></li>
-    </ul>
+      <h3>3. Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</h3>
+      <ul>
+        <li>Developed an IoT-based water monitoring and control system integrated with predictive analytics.</li>
+        <li>Used ESP32 microcontroller and sensors for real-time data collection.</li>
+        <li>Implemented LSTM for forecasting and DBSCAN for anomaly detection.</li>
+        <li>Improved water management through data-driven insights.</li>
+      </ul>
+      <p>📅 Published on: 6 April 2025<br>
+         🧾 Journal: The Asian Review of Civil Engineering (TARCE)<br>
+         🔗 DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261" target="_blank">https://doi.org/10.70112/tarce-2025.14.1.4261</a></p>
 
-    <h2 id="publications">Publications</h2>
-    <p><strong>Enhancing Water Management...</strong></p>
+      <h3>4. Supplier Invoice Process Automation</h3>
+      <ul>
+        <li>Developed an automation system for supplier invoice handling using Optical Character Recognition (OCR).</li>
+        <li>Automated text extraction and data validation using Python and OpenCV.</li>
+        <li>Reduced manual intervention and increased accuracy in financial record processing.</li>
+      </ul>
+      <p><strong>Technologies:</strong> Python, OpenCV, Pandas, Automation APIs</p>
+    </section>
 
-    <h2 id="achievements">Achievements & Certifications</h2>
-    <ul><li>NPTEL Certifications: Python, Cloud Computing</li></ul>
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <p><strong>Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</strong><br>
+      <em>Bramesh, S. M., Mahadevu, M. P., & Nayaka, Y. L. B.</em><br>
+      The Asian Review of Civil Engineering, Vol. 14(1), pp. 37–42 (2025)<br>
+      DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261" target="_blank">https://doi.org/10.70112/tarce-2025.14.1.4261</a><br>
+      Published by International Scientific Research Organization Journals (ISROJ)</p>
+    </section>
 
-    <h2 id="hobbies">Hobbies & Interests</h2>
-    <p>I enjoy cricket, table tennis, movie reviewing, and creative arts.</p>
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+      <h2>Achievements & Certifications</h2>
+      <ul>
+        <li>Developed and hosted a custom IoT app <strong>DEV-IOT</strong> using Netlify and Android Studio.</li>
+        <li>Published research paper in TARCE Journal (ISROJ).</li>
+        <li>NPTEL Certifications: Python Programming, Cloud Computing.</li>
+      </ul>
+    </section>
 
-    <h2 id="links">External Links</h2>
-    <ul>
-      <li><a href="https://github.com/Devputta">GitHub Profile</a></li>
-      <li><a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">LinkedIn Profile</a></li>
-    </ul>
-  </section>
-</main>
+    <!-- HOBBIES -->
+    <section id="hobbies">
+      <h2>Hobbies & Interests</h2>
+      <p>Outside of technology, I enjoy cricket, table tennis, movie reviewing, and creative arts like painting and drawing, which inspire creativity and problem-solving in my professional work.</p>
+    </section>
 
-<script>
-/* Toggle navigation for mobile */
-function toggleNav() {
-  document.getElementById("sidebar").classList.toggle("open");
-}
+    <!-- LINKS -->
+    <section id="links">
+      <h2>External Links</h2>
+      <ul>
+        <li><a href="https://github.com/Devputta" target="_blank">GitHub Profile</a></li>
+        <li><a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/" target="_blank">LinkedIn Profile</a></li>
+      </ul>
+    </section>
+  </main>
 
-/* Highlight active section */
-const sections = document.querySelectorAll("section h2[id]");
-const navLinks = document.querySelectorAll("nav a");
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const links = sidebar.querySelectorAll('a');
 
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute("id");
+    function toggleMenu() {
+      sidebar.classList.toggle('show');
     }
-  });
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-});
-</script>
+
+    // Close sidebar when clicking a link (on mobile)
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) sidebar.classList.remove('show');
+      });
+    });
+
+    // Highlight active section
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 120;
+      links.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
