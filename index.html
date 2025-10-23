@@ -19,54 +19,60 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     header h1 {
       margin: 0;
-      font-size: 1.5em;
+      font-size: 1.6em;
+    }
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.6em;
+      color: #0645ad;
     }
     nav {
       background-color: #f8f9fa;
       border-right: 1px solid #a2a9b1;
-      width: 200px;
+      padding: 20px;
+      width: 220px;
       position: fixed;
-      top: 70px;
+      top: 60px;
       bottom: 0;
       overflow-y: auto;
-      padding: 15px;
-    }
-    nav h3 {
-      margin-top: 0;
-      font-size: 1.1em;
-      color: #0645ad;
     }
     nav a {
       display: block;
-      padding: 5px 0;
+      margin-bottom: 8px;
       color: #0645ad;
       text-decoration: none;
-      font-size: 0.95em;
     }
     nav a:hover {
       text-decoration: underline;
     }
     main {
-      margin-left: 230px;
-      max-width: 850px;
+      margin-left: 260px;
+      max-width: 900px;
       padding: 20px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+    .content {
+      flex: 3;
     }
     .infobox {
-      float: right;
+      flex: 1;
       border: 1px solid #a2a9b1;
       background-color: #f8f9fa;
       padding: 10px;
       font-size: 0.9em;
-      max-width: 250px;
-      margin-left: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-width: 260px;
+      height: fit-content;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .infobox img {
       width: 100%;
@@ -77,6 +83,10 @@
       color: #0645ad;
       padding-bottom: 3px;
     }
+    h3 {
+      margin-top: 1em;
+      color: #0645ad;
+    }
     a {
       color: #0645ad;
       text-decoration: none;
@@ -84,30 +94,63 @@
     a:hover {
       text-decoration: underline;
     }
-    @media (max-width: 768px) {
+    ul {
+      margin-top: 0;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table, th, td {
+      border: 1px solid #a2a9b1;
+      padding: 5px;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 900px) {
       nav {
-        position: relative;
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #a2a9b1;
+        display: none;
+        position: fixed;
+        width: 200px;
+        top: 60px;
+        left: 0;
+        background-color: #f8f9fa;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        z-index: 999;
+        height: calc(100% - 60px);
+      }
+      .nav-toggle {
+        display: block;
       }
       main {
         margin-left: 0;
+        flex-direction: column;
+        padding: 15px;
       }
       .infobox {
-        float: none;
-        margin: 10px 0;
+        max-width: 100%;
+        order: -1;
+        margin-bottom: 20px;
+      }
+      table {
+        font-size: 0.9em;
       }
     }
   </style>
+  <script>
+    function toggleNav() {
+      const nav = document.querySelector('nav');
+      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
   <header>
     <h1>Mahadevu M P - Portfolio</h1>
+    <span class="nav-toggle" onclick="toggleNav()">☰</span>
   </header>
 
   <nav>
-    <h3>Contents</h3>
     <a href="#about">About Me</a>
     <a href="#career">Career Objective</a>
     <a href="#education">Education</a>
@@ -120,69 +163,103 @@
   </nav>
 
   <main>
-    <section class="infobox">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA..." alt="Mahadevu M P" />
+    <aside class="infobox">
+      <img src="images/profile.jpg" alt="Mahadevu M P" />
       <p><strong>Full Name:</strong> Mahadevu M P</p>
       <p><strong>Field:</strong> Information Science & Engineering</p>
       <p><strong>College:</strong> PES College of Engineering, Mandya</p>
       <p><strong>GitHub:</strong> <a href="https://github.com/Devputta">github.com/Devputta</a></p>
       <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">mahadevu-m-p</a></p>
+    </aside>
+
+    <section class="content">
+      <h2 id="about">About Me</h2>
+      <p>I am Mahadevu M P, a passionate and detail-oriented Information Science and Engineering graduate from PES College of Engineering, Mandya, with a CGPA of 7.79/10. My academic and professional experiences have strengthened my expertise in data analytics, machine learning, and automation-based projects. I am committed to applying technology creatively to build scalable, efficient, and impactful real-world solutions.</p>
+
+      <h2 id="career">Career Objective</h2>
+      <p>To obtain a challenging position in an organization that promotes innovation, continuous learning, and growth. I aim to leverage my technical and analytical skills in data analysis, IoT, and software development to contribute to meaningful projects that create real-world impact and enhance organizational efficiency.</p>
+
+      <h2 id="education">Education</h2>
+      <table>
+        <tr><th>Qualification</th><th>Institution</th><th>CGPA / %</th><th>Year</th></tr>
+        <tr><td>B.E. in Information Science & Engineering</td><td>PES College of Engineering, Mandya</td><td>7.79 / 10</td><td>2025</td></tr>
+      </table>
+
+      <h2 id="skills">Technical Skills</h2>
+      <ul>
+        <li><strong>Programming Languages:</strong> Python, Java, C</li>
+        <li><strong>Frameworks & Tools:</strong> Django, Flask, Visual Studio Code</li>
+        <li><strong>Databases:</strong> MySQL, SQLite</li>
+        <li><strong>Data Analytics & BI:</strong> Power BI, Power Query, DAX</li>
+        <li><strong>Machine Learning:</strong> TensorFlow, Scikit-learn, Pandas, NumPy</li>
+        <li><strong>Version Control:</strong> Git, GitHub</li>
+        <li><strong>Other Tools:</strong> API Integration, Automation APIs, Data Visualization</li>
+      </ul>
+
+      <h2 id="projects">Projects</h2>
+
+      <h3>1. College Information Telegram Bot</h3>
+      <ul>
+        <li>Developed a Telegram bot capable of delivering college-related information through automated chat interactions.</li>
+        <li>Designed backend logic in Python to handle user queries.</li>
+        <li>Integrated the Telegram Bot API and college data sources.</li>
+        <li>Used NLP techniques for intelligent query understanding.</li>
+        <li>Provided quick and accurate responses for user requests.</li>
+        <li>🔗 <a href="https://github.com/Devputta">GitHub Repository</a></li>
+      </ul>
+
+      <h3>2. Taxi Fare Prediction Using Machine Learning</h3>
+      <ul>
+        <li>A predictive model designed to estimate taxi fares based on dynamic parameters such as distance, duration, and time of day.</li>
+        <li>Collected and cleaned real-world fare data.</li>
+        <li>Implemented supervised regression models for prediction.</li>
+        <li>Visualized results and performance using Matplotlib.</li>
+        <li>Technologies: Python, Pandas, NumPy, Scikit-learn</li>
+      </ul>
+
+      <h3>3. Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</h3>
+      <ul>
+        <li>Developed an IoT-based water monitoring and control system integrated with predictive analytics.</li>
+        <li>Used ESP32 microcontroller and sensors for real-time data collection.</li>
+        <li>Implemented LSTM for forecasting and DBSCAN for anomaly detection.</li>
+        <li>Improved water management through data-driven insights.</li>
+        <li>📅 Published on: 6 April 2025</li>
+        <li>🧾 Journal: The Asian Review of Civil Engineering (TARCE)</li>
+        <li>🔗 DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261">10.70112/tarce-2025.14.1.4261</a></li>
+      </ul>
+
+      <h3>4. Supplier Invoice Process Automation</h3>
+      <ul>
+        <li>An automation system for supplier invoice handling using Optical Character Recognition (OCR).</li>
+        <li>Automated text extraction and data validation using Python and OpenCV.</li>
+        <li>Integrated workflow reduced manual intervention.</li>
+        <li>Increased accuracy in financial record processing.</li>
+        <li>Technologies: Python, OpenCV, Pandas, Automation APIs</li>
+      </ul>
+
+      <h2 id="publications">Publications</h2>
+      <p><strong>Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</strong><br>
+      Bramesh, S. M., Mahadevu, M. P., & Nayaka, Y. L. B.<br>
+      The Asian Review of Civil Engineering, Vol. 14(1), pp. 37–42 (2025)<br>
+      DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261">https://doi.org/10.70112/tarce-2025.14.1.4261</a><br>
+      Published by International Scientific Research Organization Journals (ISROJ)</p>
+
+      <h2 id="achievements">Achievements & Certifications</h2>
+      <ul>
+        <li>Developed and hosted a custom IoT app <strong>DEV-IOT</strong> using Netlify and Android Studio.</li>
+        <li>Published research paper in TARCE Journal (ISROJ).</li>
+        <li>NPTEL Certifications: Python Programming, Cloud Computing.</li>
+      </ul>
+
+      <h2 id="hobbies">Hobbies & Interests</h2>
+      <p>Outside of technology, I enjoy cricket, table tennis, movie reviewing, and creative arts like painting and drawing, which inspire creativity and problem-solving in my professional work.</p>
+
+      <h2 id="links">External Links</h2>
+      <ul>
+        <li><a href="https://github.com/Devputta">GitHub Profile</a></li>
+        <li><a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">LinkedIn Profile</a></li>
+      </ul>
     </section>
-
-    <h2 id="about">About Me</h2>
-    <p>I am Mahadevu M P, a passionate and detail-oriented Information Science and Engineering graduate from PES College of Engineering, Mandya, with a CGPA of 7.79/10. My academic and professional experiences have strengthened my expertise in data analytics, machine learning, and automation-based projects. I am committed to applying technology creatively to build scalable, efficient, and impactful real-world solutions.</p>
-
-    <h2 id="career">Career Objective</h2>
-    <p>To obtain a challenging position in an organization that promotes innovation, continuous learning, and growth. I aim to leverage my technical and analytical skills in data analysis, IoT, and software development to contribute to meaningful projects that create real-world impact and enhance organizational efficiency.</p>
-
-    <h2 id="education">Education</h2>
-    <table border="1" cellspacing="0" cellpadding="5">
-      <tr><th>Qualification</th><th>Institution</th><th>CGPA / %</th><th>Year</th></tr>
-      <tr><td>B.E. in Information Science & Engineering</td><td>PES College of Engineering, Mandya</td><td>7.79 / 10</td><td>2025</td></tr>
-    </table>
-
-    <h2 id="skills">Technical Skills</h2>
-    <ul>
-      <li><strong>Programming Languages:</strong> Python, Java, C</li>
-      <li><strong>Frameworks & Tools:</strong> Django, Flask, Visual Studio Code</li>
-      <li><strong>Databases:</strong> MySQL, SQLite</li>
-      <li><strong>Data Analytics & BI:</strong> Power BI, Power Query, DAX</li>
-      <li><strong>Machine Learning:</strong> TensorFlow, Scikit-learn, Pandas, NumPy</li>
-      <li><strong>Version Control:</strong> Git, GitHub</li>
-      <li><strong>Other Tools:</strong> API Integration, Automation APIs, Data Visualization</li>
-    </ul>
-
-    <h2 id="projects">Projects</h2>
-    <h3>College Information Telegram Bot</h3>
-    <p>Developed a Telegram bot that provides college-related information using automated interactions with Telegram Bot API. Implemented backend logic in Python with database integration and NLP techniques.</p>
-
-    <h3>Taxi Fare Prediction Using Machine Learning</h3>
-    <p>Designed a predictive model to estimate taxi fares based on distance, time, and other dynamic factors using regression techniques.</p>
-
-    <h3>Enhancing Water Management in Buildings (IoT + ML)</h3>
-    <p>Built an IoT-based water monitoring system using ESP32 and sensors, integrating LSTM for predictive analysis and DBSCAN for anomaly detection.</p>
-
-    <h3>Supplier Invoice Process Automation</h3>
-    <p>Automated supplier invoice extraction and data validation using OCR and Python, reducing manual effort in financial workflows.</p>
-
-    <h2 id="publications">Publications</h2>
-    <p><em>Bramesh, S. M., Mahadevu, M. P., & Nayaka, Y. L. B. (2025).</em> Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics. <em>The Asian Review of Civil Engineering</em>, 14(1), 37–42. DOI: <a href="https://doi.org/10.70112/tarce-2025.14.1.4261">10.70112/tarce-2025.14.1.4261</a></p>
-
-    <h2 id="achievements">Achievements & Certifications</h2>
-    <ul>
-      <li>Developed and hosted a custom IoT app <strong>DEV-IOT</strong> using Netlify and Android Studio.</li>
-      <li>Published research paper in TARCE Journal (ISROJ).</li>
-      <li>NPTEL Certifications: Python Programming, Cloud Computing.</li>
-    </ul>
-
-    <h2 id="hobbies">Hobbies & Interests</h2>
-    <p>Outside of technology, I enjoy cricket, table tennis, movie reviewing, and creative arts like painting and drawing, which inspire creativity and problem-solving in my professional work.</p>
-
-    <h2 id="links">External Links</h2>
-    <ul>
-      <li><a href="https://github.com/Devputta">GitHub Profile</a></li>
-      <li><a href="https://www.linkedin.com/in/mahadevu-m-p-58b51426b/">LinkedIn Profile</a></li>
-    </ul>
   </main>
 </body>
 </html>
