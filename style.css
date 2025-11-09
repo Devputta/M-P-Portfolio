@@ -20,7 +20,26 @@ header h1 {
 
 header p {
   color: #555;
-  margin-top: 5px;
+  margin: 8px 0;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #1a73e8;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  margin-top: 15px;
 }
 
 nav a {
@@ -74,11 +93,12 @@ h2 {
   text-decoration: none;
   color: #202124;
   border: 1px solid #ddd;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   border-color: #1a73e8;
 }
 
