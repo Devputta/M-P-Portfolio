@@ -1,174 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahadevu M P - Wikipedia Style Portfolio</title>
-  <style>
-    body {
-      font-family: "Georgia", serif;
-      background-color: #f8f9fa;
-      color: #202122;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #fff;
-      border-bottom: 1px solid #a2a9b1;
-      text-align: center;
-      padding: 1em;
-    }
-    header img {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-    }
-    h1 {
-      font-size: 2em;
-      margin-top: 0.5em;
-    }
-    main {
-      max-width: 900px;
-      margin: 2em auto;
-      background: #fff;
-      padding: 2em;
-      border: 1px solid #a2a9b1;
-      border-radius: 6px;
-    }
-    section {
-      margin-bottom: 2.5em;
-    }
-    h2 {
-      border-bottom: 1px solid #a2a9b1;
-      padding-bottom: 0.3em;
-      color: #0645ad;
-    }
-    a {
-      color: #0645ad;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .certificates, .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1em;
-      text-align: center;
-    }
-    .certificates img, .projects img {
-      width: 100%;
-      height: auto;
-      border: 1px solid #a2a9b1;
-      border-radius: 4px;
-      transition: transform 0.3s ease;
-    }
-    .certificates img:hover, .projects img:hover {
-      transform: scale(1.05);
-    }
-    .project-info {
-      font-size: 0.9em;
-      color: #555;
-      margin-top: 0.5em;
-    }
-    footer {
-      text-align: center;
-      padding: 1em;
-      font-size: 0.85em;
-      border-top: 1px solid #a2a9b1;
-      background-color: #fff;
-      color: #555;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahadevu M P - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
-    <img src="images/profile.jpg" alt="Mahadevu M P Profile Picture">
     <h1>Mahadevu M P</h1>
-    <p>Information Science Engineer | IoT & Data Analytics Enthusiast</p>
+    <p><em>Information Science Engineer | Developer | Data Enthusiast</em></p>
   </header>
 
   <main>
-    <section>
-      <h2>About</h2>
-      <p>
-        Mahadevu M P is a passionate and detail-oriented Information Science and Engineering graduate from PES College of Engineering, Mandya. 
-        His work focuses on IoT systems, Machine Learning, and Data Analytics, blending technology with real-world problem-solving to create smarter and scalable solutions.
-      </p>
-    </section>
+    <!-- Intro Section -->
+    <section class="intro">
+      <img src="images/profile.png" alt="Mahadevu M P" class="profile-photo">
 
-    <section>
-      <h2>Certificates</h2>
-      <div class="certificates">
-        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
-          <img src="images/certificate1.jpg" alt="LAQUILL Level 1 English Certificate">
-        </a>
-        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
-          <img src="images/certificate2.jpg" alt="Zscaler Networking Internship Certificate">
-        </a>
-        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
-          <img src="images/certificate3.jpg" alt="NPTEL IoT Certificate">
-        </a>
-        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
-          <img src="images/certificate4.jpg" alt="NPTEL Cloud Certificate">
-        </a>
+      <div class="bio">
+        <p><strong>Full Name:</strong> Mahadevu M P</p>
+        <p><strong>Education:</strong> B.E. in Information Science and Engineering, PES College of Engineering, Mandya</p>
+        <p><strong>Specialization:</strong> IoT, Data Analytics, and Automation</p>
+        <p><strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
+            View Profile
+          </a>
+        </p>
       </div>
     </section>
 
-    <section>
+    <hr>
+
+    <!-- Certificates Section -->
+    <section class="certificates">
+      <h2>Certificates</h2>
+
+      <div class="row-item">
+        <img src="images/certificate1.png" alt="Certificate 1">
+        <div>
+          <h3>English Proficiency Level 1</h3>
+          <p>Certified in English proficiency to enhance professional communication and workplace English skills.</p>
+          <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">View Certificate</a>
+        </div>
+      </div>
+
+      <div class="row-item">
+        <img src="images/certificate2.png" alt="Certificate 2">
+        <div>
+          <h3>Zscaler Networking Virtual Internship</h3>
+          <p>Completed an internship focusing on cloud security, networking concepts, and practical Zscaler tools.</p>
+          <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">View Certificate</a>
+        </div>
+      </div>
+
+      <div class="row-item">
+        <img src="images/certificate3.png" alt="Certificate 3">
+        <div>
+          <h3>NPTEL Cloud Computing</h3>
+          <p>Studied distributed systems, virtualization, and scalable cloud architectures via NPTEL course.</p>
+          <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">View Certificate</a>
+        </div>
+      </div>
+
+      <div class="row-item">
+        <img src="images/certificate4.png" alt="Certificate 4">
+        <div>
+          <h3>NPTEL IoT Applications</h3>
+          <p>Gained hands-on experience with IoT protocols, sensors, and cloud integration through NPTEL coursework.</p>
+          <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">View Certificate</a>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Projects Section -->
+    <section class="projects">
       <h2>Projects</h2>
-      <div class="projects">
-        <!-- Project 1 -->
-        <a href="https://doi.org/10.70112/tarce-2025.14.1.4261" target="_blank">
-          <img src="images/project1.jpg" alt="IoT Water Management Project">
-        </a>
-        <div class="project-info">
-          <b>Enhancing Water Management in Buildings Through IoT-Based Monitoring and ML Analytics</b><br>
-          Published: 06-04-2025 | <a href="https://wokwi.com/projects/426383875942781953" target="_blank">View Simulation</a>
-        </div>
 
-        <!-- Project 2 -->
-        <a href="https://github.com/yourusername/insurance-policy-dashboard" target="_blank">
-          <img src="images/project2.jpg" alt="Insurance Policy Dashboard Project">
-        </a>
-        <div class="project-info">
-          <b>Insurance Policy Analytics Dashboard — Power BI</b><br>
-          Tracks policy performance, claims, and profitability using advanced DAX.
+      <div class="row-item">
+        <img src="images/project1.png" alt="Project 1">
+        <div>
+          <h3>IoT & ML Water Management System</h3>
+          <p>Developed an IoT-based automatic motor control system for water tanks with ML to analyze consumption patterns weekly, monthly, and yearly.</p>
+          <a href="https://wokwi.com/projects/426383875942781953" target="_blank">View Project</a>
         </div>
+      </div>
 
-        <!-- Project 3 -->
-        <a href="https://github.com/yourusername/hotel-booking-analytics" target="_blank">
-          <img src="images/project3.jpg" alt="Hotel Booking Analytics Dashboard">
-        </a>
-        <div class="project-info">
-          <b>Hotel Booking Insights Dashboard</b><br>
-          Analyzes customer loyalty, cancellations, and booking trends in Power BI.
+      <div class="row-item">
+        <img src="images/project2.png" alt="Project 2">
+        <div>
+          <h3>Insurance Policy Analytics Dashboard</h3>
+          <p>Designed an interactive Power BI dashboard for visualizing insurance data and policy performance trends.</p>
+          <a href="#" target="_blank">View Project</a>
         </div>
+      </div>
 
-        <!-- Project 4 -->
-        <a href="https://github.com/yourusername/sales-shipment-dashboard" target="_blank">
-          <img src="images/project4.jpg" alt="Sales and Shipment Analytics Dashboard">
-        </a>
-        <div class="project-info">
-          <b>Advanced Sales & Shipment Analytics Dashboard</b><br>
-          Interactive Power BI dashboard for tracking global chocolate sales.
+      <div class="row-item">
+        <img src="images/project3.png" alt="Project 3">
+        <div>
+          <h3>Hotel Booking Analytics Dashboard</h3>
+          <p>Created a data-driven dashboard to analyze booking patterns, occupancy rates, and customer preferences using SQL and Power BI.</p>
+          <a href="#" target="_blank">View Project</a>
         </div>
+      </div>
 
-        <!-- Project 5 -->
-        <a href="https://github.com/yourusername/sql-powerbi-sales-dashboard" target="_blank">
-          <img src="images/project5.jpg" alt="Sales Dashboard - Awesome Chocolates">
-        </a>
-        <div class="project-info">
-          <b>Sales Dashboard – Awesome Chocolates (SQL + Power BI)</b><br>
-          Real-time sales visualization using SQL database connection.
+      <div class="row-item">
+        <img src="images/project4.png" alt="Project 4">
+        <div>
+          <h3>Sales & Shipment Analytics Dashboard</h3>
+          <p>Built a Power BI report to monitor sales performance, product shipments, and profit margins with dynamic visuals.</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <div class="row-item">
+        <img src="images/project5.png" alt="Project 5">
+        <div>
+          <h3>Sales Dashboard (SQL + Power BI)</h3>
+          <p>Integrated SQL queries with Power BI for creating automated sales reports and business KPIs visualization.</p>
+          <a href="#" target="_blank">View Project</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Mahadevu M P | <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">LinkedIn</a></p>
-  </footer>
 </body>
 </html>
