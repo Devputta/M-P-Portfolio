@@ -6,113 +6,153 @@
   <title>Mahadevu M P - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header>
-    <img src="images/profile.jpg" alt="Mahadevu M P" class="profile-pic" />
     <h1>Mahadevu M P</h1>
-    <p>Information Science Engineer | IoT & ML Developer | Data Analyst</p>
+    <p>Data Analyst | Data Engineer | Software Developer</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#publications">Publications</a>
+    </nav>
   </header>
 
-  <main>
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>💻 Projects</h2>
-      <div class="card-container">
+  <!-- About Section -->
+  <section id="about">
+    <h2>📘 About Me</h2>
+    <div class="about-container">
+      <img src="images/profile.png" alt="Mahadevu M P" class="profile-pic" />
+      <p>
+        I am <strong>Mahadevu M P</strong>, a passionate and analytical
+        <strong>Information Science Engineer</strong> from PES College of Engineering, Mandya.  
+        My focus areas are <strong>data analytics</strong>, <strong>data engineering</strong>,
+        and <strong>software development</strong>. I specialize in building data-driven
+        systems, dashboards, and machine learning solutions that enhance decision-making
+        and efficiency.  
+        I have experience in Python, SQL, Power BI, and automation pipelines, and I enjoy
+        solving real-world problems through clean data design and insight-driven analytics.
+      </p>
+    </div>
+  </section>
 
-        <a href="https://github.com/mahadevump/IoT-WaterManagement" target="_blank" class="card">
-          <img src="images/project1.png" alt="IoT Water Management System">
-          <div class="card-info">
-            <h3>IoT + ML Water Management System</h3>
-            <p>Developed an ESP32-based automatic motor control system with Blynk and Android integration. Predicts water usage using LSTM and DBSCAN models for anomaly detection.</p>
-            <p><strong>Tech Used:</strong> ESP32, Firebase, TensorFlow, Python, Blynk, Android (Java)</p>
-          </div>
-        </a>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>💻 Projects</h2>
+    <div class="card-container">
 
-        <a href="https://github.com/mahadevump/InsuranceAnalytics" target="_blank" class="card">
-          <img src="images/project2.png" alt="Insurance Policy Dashboard">
-          <div class="card-info">
-            <h3>Insurance Policy Dashboard</h3>
-            <p>Built a Power BI dashboard with SQL backend to analyze claims, premiums, and policyholder insights. Included KPIs like claim ratios and performance metrics.</p>
-            <p><strong>Tech Used:</strong> SQL, Power BI, DAX, Excel</p>
-          </div>
-        </a>
+      <a href="https://github.com/mahadevump/IoT-WaterManagement" target="_blank" class="card">
+        <img src="images/project1.png" alt="Project 1">
+        <div class="card-info">
+          <h3>IoT + ML Water Management System</h3>
+          <p>Developed an ESP32-based automatic motor control system integrated with the Blynk app and custom Android interface.</p>
+          <p>Implemented ML (LSTM + DBSCAN) for water usage prediction and anomaly detection using Python, TensorFlow, and Pandas.</p>
+        </div>
+      </a>
 
-        <a href="https://github.com/mahadevump/HotelBookingDashboard" target="_blank" class="card">
-          <img src="images/project3.png" alt="Hotel Booking Analytics">
-          <div class="card-info">
-            <h3>Hotel Booking Analytics</h3>
-            <p>Analyzed booking cancellations, customer behavior, and revenue trends with SQL and Power BI visualizations.</p>
-            <p><strong>Tech Used:</strong> SQL, Power BI, DAX</p>
-          </div>
-        </a>
+      <a href="https://github.com/mahadevump/InsuranceAnalytics" target="_blank" class="card">
+        <img src="images/project2.png" alt="Project 2">
+        <div class="card-info">
+          <h3>Insurance Policy Dashboard</h3>
+          <p>Built a Power BI dashboard to visualize insurance data — policy distribution, claims, and customer segmentation.</p>
+          <p>Used SQL for data transformation and DAX measures to calculate KPIs like claim ratios and premium performance.</p>
+        </div>
+      </a>
 
-        <a href="https://github.com/mahadevump/SalesAndShipment" target="_blank" class="card">
-          <img src="images/project4.png" alt="Sales & Shipment Analysis">
-          <div class="card-info">
-            <h3>Sales & Shipment Analysis</h3>
-            <p>Designed SQL queries and BI dashboards for analyzing product sales, delivery times, and profitability.</p>
-            <p><strong>Tech Used:</strong> SQL, Power BI, Python</p>
-          </div>
-        </a>
+      <a href="https://github.com/mahadevump/HotelBookingDashboard" target="_blank" class="card">
+        <img src="images/project3.png" alt="Project 3">
+        <div class="card-info">
+          <h3>Hotel Booking Analytics</h3>
+          <p>Analyzed booking cancellations, revenue trends, and occupancy patterns using SQL and Power BI visualizations.</p>
+          <p>Enhanced decision-making through data-driven visualizations and calculated fields.</p>
+        </div>
+      </a>
 
-        <a href="https://github.com/mahadevump/SalesDashboard" target="_blank" class="card">
-          <img src="images/project5.png" alt="Advanced Sales Dashboard">
-          <div class="card-info">
-            <h3>Advanced Sales Dashboard</h3>
-            <p>End-to-end business intelligence project integrating SQL backend with dynamic Power BI reports and calculated DAX measures.</p>
-            <p><strong>Tech Used:</strong> SQL, Power BI, DAX, Excel</p>
-          </div>
-        </a>
-      </div>
-    </section>
+      <a href="https://github.com/mahadevump/SalesAndShipment" target="_blank" class="card">
+        <img src="images/project4.png" alt="Project 4">
+        <div class="card-info">
+          <h3>Sales & Shipment Analysis</h3>
+          <p>Created Power BI dashboards using SQL-based datasets to track delivery performance, profitability, and regional sales metrics.</p>
+          <p>Implemented slicers and filters for interactivity and user-driven insights.</p>
+        </div>
+      </a>
 
-    <!-- Certificates Section -->
-    <section id="certificates">
-      <h2>🎓 Certifications</h2>
-      <div class="card-container">
+      <a href="https://github.com/mahadevump/SalesDashboard" target="_blank" class="card">
+        <img src="images/project5.png" alt="Project 5">
+        <div class="card-info">
+          <h3>Advanced Sales Dashboard (SQL + BI)</h3>
+          <p>End-to-end BI solution combining SQL Server backend with Power BI visual interface for sales insights.</p>
+          <p>Included dynamic KPIs, YoY growth analysis, and executive reporting visuals.</p>
+        </div>
+      </a>
 
-        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" class="card">
-          <img src="images/certificate1.png" alt="Laquill English Level 1">
-          <div class="card-info">
-            <h3>Laquill Level 1 – English Language Certification</h3>
-            <p>Successfully completed Level 1 English Language proficiency with strong performance in Grammar, Vocabulary, Listening, and Writing.</p>
-            <p><strong>Date:</strong> May 24, 2024</p>
-          </div>
-        </a>
+    </div>
+  </section>
 
-        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" class="card">
-          <img src="images/certificate2.png" alt="Zscaler Networking Internship">
-          <div class="card-info">
-            <h3>Zscaler Networking Virtual Internship (10 Weeks)</h3>
-            <p>Covered advanced networking concepts: DNS, DHCP, Subnetting, NAT, VPN, Firewalls, ZTNA, and hands-on with ZIA & ZPA.</p>
-            <p><strong>Platform:</strong> Eduskills | <strong>Focus:</strong> Secure Network Access and Zero Trust Architecture</p>
-          </div>
-        </a>
+  <!-- Certificates Section -->
+  <section id="certificates">
+    <h2>📜 Certificates</h2>
+    <div class="card-container">
+      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" class="card">
+        <img src="images/certificate1.png" alt="English Certification">
+        <div class="card-info">
+          <h3>Laquill Level 1 English Certification</h3>
+          <p>Successfully completed Level 1 English certification with high proficiency across grammar, vocabulary, reading, and writing modules.</p>
+          <p><strong>Issued:</strong> 24 May 2024</p>
+        </div>
+      </a>
 
-        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" class="card">
-          <img src="images/certificate3.png" alt="NPTEL Cloud Certification">
-          <div class="card-info">
-            <h3>NPTEL – Cloud Service Models & Architecture</h3>
-            <p>Explored cloud models, service delivery, deployment strategies, and integration with real-world applications.</p>
-            <p><strong>Focus:</strong> Cloud Infrastructure & Architecture</p>
-          </div>
-        </a>
+      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" class="card">
+        <img src="images/certificate2.png" alt="Zscaler Internship">
+        <div class="card-info">
+          <h3>Zscaler Networking Virtual Internship</h3>
+          <p>Completed a 10-week internship covering DNS, DHCP, IP addressing, VPNs, and network security concepts including Zero Trust Architecture (ZTA).</p>
+          <p><strong>Sponsored by:</strong> Eduskills Foundation</p>
+        </div>
+      </a>
 
-        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" class="card">
-          <img src="images/certificate4.png" alt="NPTEL IoT Certification">
-          <div class="card-info">
-            <h3>NPTEL – Internet of Things (IoT)</h3>
-            <p>Learned IoT ecosystem, enabling technologies, and integration with cloud platforms. Applied concepts in real-world IoT projects.</p>
-            <p><strong>Focus:</strong> IoT + Cloud Integration</p>
-          </div>
-        </a>
-      </div>
-    </section>
-  </main>
+      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" class="card">
+        <img src="images/certificate3.png" alt="NPTEL IoT Certification">
+        <div class="card-info">
+          <h3>NPTEL Certification – IoT Ecosystem and Technologies</h3>
+          <p>Learned about IoT architecture, sensor integration, and real-world IoT-cloud solutions for smart automation systems.</p>
+          <p><strong>Issued by:</strong> NPTEL (IIT Initiative)</p>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" class="card">
+        <img src="images/certificate4.png" alt="NPTEL Cloud Certification">
+        <div class="card-info">
+          <h3>NPTEL Certification – Cloud Service Models</h3>
+          <p>Studied cloud service models (IaaS, PaaS, SaaS) and integration with IoT systems for data processing and scalability.</p>
+          <p><strong>Issued by:</strong> NPTEL</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications">
+    <h2>📖 Publications</h2>
+    <div class="publication">
+      <h3>Enhancing Water Management in Buildings Through IoT-Based Monitoring and Machine Learning Powered Analytics</h3>
+      <p><strong>Authors:</strong> Bramesh, S. M., Mahadevu, M. P., & Nayaka, Y. L. B. (2025)</p>
+      <p><strong>Published in:</strong> The Asian Review of Civil Engineering, 14(1), 37–42.</p>
+      <p><strong>DOI:</strong> <a href="https://doi.org/10.70112/tarce-2025.14.1.4261" target="_blank">10.70112/tarce-2025.14.1.4261</a></p>
+      <p><strong>Keywords:</strong> IoT, Water Management, Machine Learning, LSTM, Anomaly Detection</p>
+      <p>
+        This research introduces an IoT-driven water monitoring system enhanced with machine learning models like LSTM and DBSCAN to
+        predict usage and detect anomalies in real-time. It significantly improves resource management efficiency and automation in residential and industrial applications.
+      </p>
+      <p><strong>Simulation:</strong>
+        <a href="https://wokwi.com/projects/426383875942781953" target="_blank">View Project on Wokwi</a>
+      </p>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Mahadevu M P | <a href="https://github.com/mahadevump" target="_blank">GitHub</a> | 
-    <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">LinkedIn</a></p>
+    <p>© 2025 Mahadevu M P | All Rights Reserved</p>
   </footer>
 </body>
 </html>
