@@ -1,176 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahadevu M P | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahadevu M P - Wikipedia Style Profile</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+<body>
+  <div class="content">
+    
+    <aside class="infobox">
+      <img src="images/profile.jpg" alt="Mahadevu M P" class="profile-pic">
+      <h3>Mahadevu M P</h3>
+      <p><b>Born:</b> Mandya, Karnataka, India</p>
+      <p><b>Education:</b> B.E. in Information Science and Engineering<br>PES College of Engineering, Mandya</p>
+      <p><b>Fields:</b> IoT, Machine Learning, Automation</p>
+      <p><b>Notable Project:</b> Watlytics</p>
+    </aside>
 
-<body class="bg-white text-gray-900 font-sans">
+    <header>
+      <h1>Mahadevu M P</h1>
+      <p><b>Information Science and Engineering Graduate | IoT & Machine Learning Enthusiast</b></p>
+      <hr>
+    </header>
 
-  <!-- ===== Navbar ===== -->
-  <header class="bg-blue-700 text-white py-4 shadow-lg sticky top-0 z-50">
-    <nav class="container mx-auto flex justify-between items-center px-6">
-      <h1 class="text-2xl font-bold">Mahadevu M P</h1>
-      <ul class="flex space-x-6 text-lg">
-        <li><a href="#about" class="hover:text-yellow-300">About</a></li>
-        <li><a href="#skills" class="hover:text-yellow-300">Skills</a></li>
-        <li><a href="#projects" class="hover:text-yellow-300">Projects</a></li>
-        <li><a href="#certifications" class="hover:text-yellow-300">Certifications</a></li>
-        <li><a href="#contact" class="hover:text-yellow-300">Contact</a></li>
+    <section>
+      <h2>Early Life and Education</h2>
+      <p>
+        Mahadevu M P attended <b>Mahadeshwara High School</b>, completed a <b>Diploma in Computer Science</b> at Ramanagara, 
+        and earned his <b>Bachelor’s degree in Information Science and Engineering</b> from <b>PES College of Engineering, Mandya</b>. 
+        He is passionate about data-driven technology, automation, and IoT-based innovation.
+      </p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><b>IoT-Based Automatic Water Motor Control for Residential Areas</b> – Uses ESP32, sensors, and the Blynk app to automate water management and monitor levels.</li>
+        <li><b>Watlytics</b> – Custom Android app that displays real-time tank data, motor status, notifications, and generates CSV reports of water usage.</li>
+        <li><b>Supplier Invoice Process Automation</b> – Python-based automation that processes and validates supplier invoices using OCR and machine learning.</li>
+        <li><b>Mental Health Analysis Using Social Media</b> – AI-driven analysis of sentiment and stress indicators in social media posts.</li>
       </ul>
-    </nav>
-  </header>
+    </section>
 
-  <!-- ===== Hero Section ===== -->
-  <section class="text-center py-20 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl md:text-5xl font-bold text-blue-700 mb-4">Hello, I'm Mahadevu M P 👋</h2>
-      <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-        Detail-oriented <b>Information Science and Engineering</b> student with a strong foundation in 
-        <b>Software Development, SQL, Power BI, and Data Analysis.</b> Passionate about 
-        building data-driven and scalable solutions that solve real-world challenges.
-      </p>
-      <a href="#projects" class="inline-block mt-6 bg-blue-700 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition">
-        View My Work
-      </a>
-    </div>
-  </section>
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li><b>English Proficiency Certification (Level 1)</b> – Completed successfully on <b>24 May 2024</b>, demonstrating strong grammar, vocabulary, and writing skills.</li>
+        <li><b>Zscaler Networking Virtual Internship</b> (Sponsored by Eduskills) – Covered fundamentals of networking, OSI & TCP/IP models, NAT, VPNs, and Zero Trust Network Architecture (ZTNA).</li>
+        <li><b>NPTEL: Cloud Service Models and Architecture</b> – Gained insights into cloud architectures and real-world use cases.</li>
+        <li><b>NPTEL: IoT Ecosystem and Enabling Technologies</b> – Learned about IoT integration with cloud platforms and real-world IoT systems.</li>
+      </ul>
 
-  <!-- ===== About Section ===== -->
-  <section id="about" class="py-16 bg-white">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-blue-700 mb-6">About Me</h2>
-      <p class="text-gray-700 max-w-3xl mx-auto text-lg">
-        I am an aspiring <b>Data Analyst & BI Developer</b> with experience in SQL, Power BI, Python, and Data Engineering tools. 
-        I enjoy turning raw data into meaningful insights through dashboards and predictive analytics. 
-        I’ve worked on academic and personal projects involving <b>IoT, Machine Learning, and Automation.</b>
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== Skills Section ===== -->
-  <section id="skills" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-blue-700 mb-10">Technical Skills</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        <div class="bg-white shadow-lg rounded-xl py-6 font-semibold">Python</div>
-        <div class="bg-white shadow-lg rounded-xl py-6 font-semibold">SQL</div>
-        <div class="bg-white shadow-lg rounded-xl py-6 font-semibold">Power BI</div>
-        <div class="bg-white shadow-lg rounded-xl py-6 font-semibold">Data Visualization</div>
-        <div class="bg-white shadow-lg rounded-xl py-6 font-semibold">Pandas</div>
-        <div class="bg-white shadow-lg rounded-xl py-6 font-semibold">Excel</div>
-        <div class="bg-white shadow-lg rounded-xl py-6 font-semibold">Machine Learning</div>
-        <div class="bg-white shadow-lg rounded-xl py-6 font-semibold">Django</div>
+      <div class="certificate-gallery">
+        <img src="images/certificate1.jpg" alt="English Certification">
+        <img src="images/certificate2.jpg" alt="Zscaler Internship">
+        <img src="images/certificate3.jpg" alt="NPTEL Cloud">
+        <img src="images/certificate4.jpg" alt="NPTEL IoT">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== Projects Section ===== -->
-  <section id="projects" class="py-16 bg-white">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-blue-700 mb-10">Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li>Languages: Python, Java, SQL, HTML, CSS, JavaScript</li>
+        <li>Frameworks: Django, TensorFlow, Power BI</li>
+        <li>Tools: Git, GitHub, MySQL, Visual Studio Code</li>
+        <li>Domains: IoT, Machine Learning, Automation, Data Analytics</li>
+      </ul>
+    </section>
 
-        <div class="bg-gray-50 shadow-lg rounded-2xl p-6 hover:shadow-2xl transition">
-          <h3 class="text-xl font-semibold text-gray-800">IoT-Based Automatic Water Motor Control</h3>
-          <p class="text-gray-600 mt-2 text-sm">
-            Developed an IoT system using ESP32 to automatically control water motors based on tank levels. 
-            Integrated with a custom Android app (<b>Watlytics</b>) for real-time monitoring, notifications, and usage analysis.
-          </p>
-        </div>
+    <section>
+      <h2>Hobbies and Interests</h2>
+      <p>Cricket, Table Tennis, Drawing, Crafting, Painting, and reviewing movies and series.</p>
+    </section>
 
-        <div class="bg-gray-50 shadow-lg rounded-2xl p-6 hover:shadow-2xl transition">
-          <h3 class="text-xl font-semibold text-gray-800">Supplier Invoice Process Automation</h3>
-          <p class="text-gray-600 mt-2 text-sm">
-            Designed a data automation pipeline to process invoices, extract information, and calculate ROI using OCR and machine learning.
-          </p>
-        </div>
+    <footer>
+      <hr>
+      <p>Last updated: November 2025 | © Mahadevu M P</p>
+    </footer>
 
-        <div class="bg-gray-50 shadow-lg rounded-2xl p-6 hover:shadow-2xl transition">
-          <h3 class="text-xl font-semibold text-gray-800">Mental Health Analysis Using Social Media</h3>
-          <p class="text-gray-600 mt-2 text-sm">
-            Analyzed social media posts using NLP and sentiment analysis to identify behavioral patterns linked to mental well-being.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Certifications Section ===== -->
-  <section id="certifications" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-10">Certifications</h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- Certificate 1 -->
-        <div class="bg-white shadow-xl rounded-2xl overflow-hidden hover:scale-105 transition duration-300">
-          <img src="images/certificate1.jpg" alt="Laquill English Certificate" class="w-full h-64 object-cover">
-          <div class="p-5 text-left">
-            <h3 class="text-xl font-semibold text-gray-800">Laquill English Level 1 Certification</h3>
-            <p class="text-sm text-gray-600 mt-2">
-              Completed Level 1 in English Language on <b>24 May 2024</b>. Scored high across Grammar (91%), Vocabulary (80%), and Writing (100%).
-            </p>
-          </div>
-        </div>
-
-        <!-- Certificate 2 -->
-        <div class="bg-white shadow-xl rounded-2xl overflow-hidden hover:scale-105 transition duration-300">
-          <img src="images/certificate2.jpg" alt="Zscaler Networking Internship" class="w-full h-64 object-cover">
-          <div class="p-5 text-left">
-            <h3 class="text-xl font-semibold text-gray-800">Zscaler Networking Virtual Internship</h3>
-            <p class="text-sm text-gray-600 mt-2">
-              10-week internship sponsored by <b>EduSkills</b>. Learned DNS, DHCP, IP addressing, NAT, VPN, ZTNA, and secure access via ZIA/ZPA.
-            </p>
-          </div>
-        </div>
-
-        <!-- Certificate 3 -->
-        <div class="bg-white shadow-xl rounded-2xl overflow-hidden hover:scale-105 transition duration-300">
-          <img src="images/certificate3.jpg" alt="NPTEL Cloud Service Models" class="w-full h-64 object-cover">
-          <div class="p-5 text-left">
-            <h3 class="text-xl font-semibold text-gray-800">NPTEL – Cloud Service Models & Architecture</h3>
-            <p class="text-sm text-gray-600 mt-2">
-              Learned about cloud computing models and architecture. Gained knowledge on integrating cloud solutions with IoT systems.
-            </p>
-          </div>
-        </div>
-
-        <!-- Certificate 4 -->
-        <div class="bg-white shadow-xl rounded-2xl overflow-hidden hover:scale-105 transition duration-300">
-          <img src="images/certificate4.jpg" alt="NPTEL IoT Ecosystem" class="w-full h-64 object-cover">
-          <div class="p-5 text-left">
-            <h3 class="text-xl font-semibold text-gray-800">NPTEL – IoT Ecosystem & Cloud Integration</h3>
-            <p class="text-sm text-gray-600 mt-2">
-              Covered IoT architecture, enabling technologies, and integration with cloud for smart, scalable solutions.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Contact Section ===== -->
-  <section id="contact" class="py-16 bg-white">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-blue-700 mb-6">Contact</h2>
-      <p class="text-gray-700 text-lg mb-6">Let's connect! You can reach me through the following platforms:</p>
-      <div class="space-x-6">
-        <a href="mailto:mahadevump04@gmail.com" class="text-blue-700 font-semibold hover:underline">Email</a>
-        <a href="https://github.com/MahadevuMP" target="_blank" class="text-blue-700 font-semibold hover:underline">GitHub</a>
-        <a href="https://www.linkedin.com/in/mahadevump" target="_blank" class="text-blue-700 font-semibold hover:underline">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Footer ===== -->
-  <footer class="bg-blue-700 text-white py-4 text-center">
-    <p>&copy; 2025 Mahadevu M P. All rights reserved.</p>
-  </footer>
-
+  </div>
 </body>
 </html>
